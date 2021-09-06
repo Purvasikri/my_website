@@ -81,7 +81,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: blog1_website.jpeg
+      - image: pic1web.jpg
         subtitle: A short Introduction
         title: About me
         slug: purva
