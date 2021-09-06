@@ -81,10 +81,12 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
-        subtitle: Ipsum Dolor Sit Amet
+      - image: blog1_website.jpeg
+        config.yaml: \themes\forty\static\img
+        subtitle: A short Introduction
         title: About me
-        url: blogs/aliquam
+        slug: Purva Sikri 
+        url: blogs/Purva Sikri
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
         title: Tempus
