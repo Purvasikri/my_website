@@ -107,6 +107,18 @@ params:
         subtitle: Feugiat Amet Tempus
         title: Etiam
         url: blogs/ipsum
+---
+categories: 
+- ""
+- ""
+date: "2017-10-31T22:42:51-5:00"
+description: Hi i am Purva Sikri and this is my project.
+draft: false
+image: img_preprog_website.jpg 
+keywords: ""
+slug: purva
+title: About me
+---
   two:
     buttonText: Get Started
     enable: yes
