@@ -3,7 +3,7 @@ categories:
 - ""
 - ""
 date: "2017-10-31T22:42:51-5:00"
-description: Hi i am Purva Sikri CDSFCSDF and this is my project.
+description: Hi i am Purva Sikri and this is my project.
 draft: false
 image: img_preprog_website.jpg 
 keywords: ""
@@ -121,17 +121,16 @@ Creating a plot of life expectancy over time grouped by continent.
 > A few observations that can be made are:
 >
 > 1. Ocenia and Europe have a **high average life expectancy** whereas Africa has the **lowest**.
-> 2. The continents that had high average life expectancy in 1950's (Ocenia and Europe), experiences low growth rate in the average life expectancy in the coming years. Whereas, Asia's life expectatncy has shown a significant growth in teh above-mentioned years.
+> 2. The continents that had high average life expectancy in 1950's (Ocenia and Europe), experiences low growth rate in the average life expectancy in the coming years. Whereas,  life expectatncy in Asia has shown a significant growth in teh above-mentioned years.
 > 3. America shows an upward graph, however it is unable to meet the life expectancy of Europe or Oceania. Further, it can also be taken into account that Asia and America (facing rapid development from 1950-2000; upgraded their quality of healthcare) and therefore faced a steeper graph than that of Africa.  
-> 4. Although  intuitive, some of the reasons for a higher life expectancy in Europe, Oceania, and America are their high standards of healthcare, standards of living (access to healthier food), and hygiene. Further, their lower populations also increase the acess to quality healthcare.
+> 4. Although  intuitive, some of the reasons for a higher life expectancy in Europe, Oceania, and America are their high standards of healthcare, standards of living (access to healthier food), and hygiene. Further, their lower populations also increase the access to quality healthcare.
 
 
 # TASK 3
 
 
 ```{r load_brexit_data, warning=FALSE, message=FALSE}
-brexit_results <- read.csv("brexit_results.csv")
-getwd
+brexit_results <- read_csv(here::here("data","brexit_results1.csv"))
 glimpse(brexit_results)
 ```
 
@@ -183,7 +182,7 @@ ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
 
 > 1. It can be seen from the graph as well as correlation calculation (+0.5), that the variable 'people born in UK' is **moderately positively correlated** to 'votes cast in favour of BREXIT'. 
 > 2. Although, it is not a strong correlation, but this value tell us that there is a **positive relation** between our x and y variable (i.e. people born in UK did vote in favour of BREXIT). 
-> 3. The moderate relationship can be because some people feared wether 'UK should have the power to govern and manage itself' while the others believed that 'EU's more open border policy could do more harm than good to UK'.
+> 3. The moderate type of relationship can be because some people feared wether 'UK should have the power to govern and manage itself' while the others believed that 'EU's more open border policy could do more harm than good to UK'.
 
 
 # Task 4
@@ -224,23 +223,6 @@ animal_rescue %>%
 > 1. The **count of number of incidents per year does not vary much** excpet for 2020 and 2021. It is the highest for 2020 and the lowest for 2021 (because it has only been recorded for 6 months in 2021; yet, the number is relatively high for 6 months, in turn showing an upward trend in the last 2 years).
 > 2. The **highest share** of animals rescued is for - cats, birds, dogs, foxs and the **lowest** for - lamb, bull, tortoise, and unknown undergound animal. 
 
-Converting the `incident_notional_cost` from `chr` to numeric
-
-```{r, parse_incident_cost,message=FALSE, warning=FALSE}
-
-# what type is variable incident_notional_cost from dataframe `animal_rescue`
-typeof(animal_rescue$incident_notional_cost)
-
-# readr::parse_number() will convert any numerical values stored as characters into numbers
-animal_rescue <- animal_rescue %>% 
-
-  # we use mutate() to use the parse_number() function and overwrite the same variable
-  mutate(incident_notional_cost = parse_number(incident_notional_cost))
-
-# incident_notional_cost from dataframe `animal_rescue` is now 'double' or numeric
-typeof(animal_rescue$incident_notional_cost)
-
-```
 
 Now that incident_notional_cost is numeric, calculating summary statistics for each animal group. 
 
@@ -279,6 +261,8 @@ base_plot <- animal_rescue %>%
   facet_wrap(~animal_group_parent, scales = "free")+
   theme_bw()
 
+getwd()
+setwd("/Users/purvasikri/my_website")
 base_plot + geom_histogram()
 base_plot + geom_density()
 base_plot + geom_boxplot()
@@ -305,6 +289,7 @@ base_plot + stat_ecdf(geom = "step", pad = FALSE) +
 > From these observations, it can be infered that the **size/weight** of the animal is positively correlated with the cost of rescuing (i.e. the heavier or bigger the animal the more time it takes to be resuced incurring higher costs). Further, another consideration could be that the more dangerous the animal the more time consuming it is to rescue, in turn incurring high costs (snakes are more expensive to rescue but are smaller than dogs - it could be that a snake's rescuing may require more protective equipments increasing the average time and costs). It is also noteworthy to mention that the count of cats, dogs, and birds being rescued is the highest (may be due to in house incidents with pets).
 >
 > **Spread of the distributions**: Although there are no normal distributions, some of the higher skewed costs for resuing animals are for - cats, birds, deers, dogs, fox, and other unkown animals. This means that the cost to rescue the above-mentioned animals is mostly lower, however, they do have a few extreme values (outliers). 
+
 
 
 # TASK 5: Details
