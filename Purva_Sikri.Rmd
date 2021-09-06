@@ -130,6 +130,7 @@ Creating a plot of life expectancy over time grouped by continent.
 
 ```{r load_brexit_data, warning=FALSE, message=FALSE}
 brexit_results <- read.csv("brexit_results.csv")
+getwd()
 glimpse(brexit_results)
 ```
 
