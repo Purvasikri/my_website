@@ -12,11 +12,12 @@ title: About me
 ---
 
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
-library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packaggtes
 library(gapminder)  # gapminder dataset
 library(here)
 library(janitor)
 library(ggplot2)
+getwd()
 ```
 
 
