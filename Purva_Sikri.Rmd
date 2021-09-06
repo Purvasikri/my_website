@@ -3,7 +3,7 @@ categories:
 - ""
 - ""
 date: "2017-10-31T22:42:51-5:00"
-description: 
+#description: 
 draft: false
 image: img_preprog_website.jpg 
 keywords: ""
@@ -130,7 +130,7 @@ Creating a plot of life expectancy over time grouped by continent.
 
 ```{r load_brexit_data, warning=FALSE, message=FALSE}
 brexit_results <- read.csv("brexit_results.csv")
-getwd()
+getwd
 glimpse(brexit_results)
 ```
 
