@@ -1,0 +1,311 @@
+---
+categories: 
+- ""
+- ""
+date: "2017-10-31T22:42:51-5:00"
+description: 
+draft: false
+image: img_preprog_website.jpg 
+keywords: ""
+slug: purva
+title: About me
+---
+
+```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(gapminder)  # gapminder dataset
+library(here)
+library(janitor)
+library(ggplot2)
+```
+
+
+# Task 1: Introductions
+
+
+> <img src="https://www.interfolio.com/wp-content/uploads/London_Business_School_Logo.png" width="150">  
+>
+>I Purva Sikri, am an incoming student for **Master's in Analytics and Management** at **London Business School**. 
+
+### Business Experience
+>    1. Intern at Mastertrust Consulting. 
+>    2. Research Assistant at O.P. Jindal Global University.
+>    3. Intern at O.P. Garg and Co.
+
+### Certifications
+>    1. KPMG trained accounting professional.
+>    2. Certified Management Accountant.
+>    3. Financial inclusion and development by IMF.
+>    4. GESE from Trinity College London.
+
+### Awards
+>    1. Graduate research scholarship for best research work.
+>    2. Dean's List for 3 consecuttive years.
+>    3. Best overall performer.
+
+> Further Information can be found on my [LinkedIn](https://www.linkedin.com/in/purvasikriconsulting/)
+
+
+# Task 2: `gapminder` country comparison
+
+
+```{r}
+glimpse(gapminder)
+
+head(gapminder, 20) # look at the first 20 rows of the dataframe
+
+```
+
+Graphs of how life expectancy has changed over the years for the `country` (India) and the `continent` (Asia).
+
+```{r}
+country_data <- gapminder %>% 
+            filter(country == "India") 
+
+continent_data <- gapminder %>% 
+            filter(continent == "Asia")
+```
+
+Creating a plot of the change in life expectancy in India
+
+```{r, lifeExp_one_country}
+ plot1 <- ggplot(data =country_data , mapping = aes(x = year, y = lifeExp))+
+   geom_point() +
+   geom_smooth(se = FALSE)+
+   NULL 
+
+ plot1
+```
+
+Adding a title to the plot previously created.
+
+```{r, lifeExp_one_country_with_label}
+plot1<- plot1 +
+   labs(title = "Change in Life Expectancy in India over time ",
+       x = "Year ",
+       y = "Life Expectancy ") +
+   NULL
+
+
+plot1
+```
+
+A plot for all countries in *Asia*. 
+
+```{r lifeExp_one_continent}
+plot2<- ggplot(continent_data, mapping = aes(x = year , y =lifeExp, colour= country, group= country))+
+   geom_line() + 
+   geom_smooth(se = FALSE) +
+   NULL
+
+plot2
+```
+
+Creating a plot of life expectancy over time grouped by continent.
+
+```{r lifeExp_facet_by_continent}
+ ggplot(data = gapminder , mapping = aes(x = year , y =lifeExp))+
+   geom_point() + 
+   labs(title = "Change in Life Expectancy over time ",
+       x = "Year ",
+       y = "Life Expectancy ")+
+   geom_smooth(se = FALSE) +
+   facet_wrap(~continent) +
+   theme(legend.position="none") +
+   NULL
+```
+
+### QUESTION: Given these trends, what can you say about life expectancy since 1952? Again, don't just say what's happening in the graph. Tell some sort of story and speculate about the differences in the patterns.
+
+> A few observations that can be made are:
+>
+> 1. Ocenia and Europe have a **high average life expectancy** whereas Africa has the **lowest**.
+> 2. The continents that had high average life expectancy in 1950's (Ocenia and Europe), experiences low growth rate in the average life expectancy in the coming years. Whereas, Asia's life expectatncy has shown a significant growth in teh above-mentioned years.
+> 3. America shows an upward graph, however it is unable to meet the life expectancy of Europe or Oceania. Further, it can also be taken into account that Asia and America (facing rapid development from 1950-2000; upgraded their quality of healthcare) and therefore faced a steeper graph than that of Africa.  
+> 4. Although  intuitive, some of the reasons for a higher life expectancy in Europe, Oceania, and America are their high standards of healthcare, standards of living (access to healthier food), and hygiene. Further, their lower populations also increase the acess to quality healthcare.
+
+
+# TASK 3
+
+
+```{r load_brexit_data, warning=FALSE, message=FALSE}
+brexit_results <- read.csv("brexit_results.csv")
+glimpse(brexit_results)
+```
+
+Plots for the brexit_results data
+
+```{r brexit_histogram, warning=FALSE, message=FALSE}
+
+# histogram
+ggplot(brexit_results, aes(x = leave_share)) +
+  geom_histogram(binwidth = 2.5) + labs(title = " PLOT 1: Frequency Histogram", subtitle ="Frequency of votes for BREXIT",
+                                        x="Votes in favour of BREXIT", 
+                                        y = "Frequency")
+
+# density plot
+ggplot(brexit_results, aes(x = leave_share)) +
+  geom_density() + labs(title = "PLOT 2: Probability Density Graph", subtitle = "Votes for BREXIT - smooothed version",
+                        x= "Votes in favour of BREXIT", 
+                        y = "Probability Density")
+
+
+# The empirical cumulative distribution function (ECDF) 
+ggplot(brexit_results, aes(x = leave_share)) +
+  stat_ecdf(geom = "step", pad = FALSE) +
+  scale_y_continuous(labels = scales::percent)+labs(title = "PLOT 3: Empirically derived cumulative probability (EDCF)", subtitle="Function of votes for BREXIT",   x="Votes in favour of BREXIT", y = "F(Votes in favour of BREXIT)")
+
+```
+
+Correlation between the people born in UK and votes casted in favour of BREXIT
+
+```{r brexit_immigration_correlation}
+brexit_results %>% 
+  select(leave_share, born_in_uk) %>% 
+  cor()
+```
+
+Scater plot along with the best fit line for people born in UK and votes casted on favour of BREXIT
+
+```{r brexit_immigration_plot}
+ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
+  geom_point(alpha=0.3) +
+  geom_smooth(method = "lm") + 
+  theme_bw() + labs(title="Scatter plot (votes for BREXIT v/s People born in UK)",
+                           x="People born in UK", 
+                           y="Votes cast in favour of BREXIT") +
+  NULL
+```
+
+### QUESTION: What can you say about the relationship shown above? Again, don't just say what's happening in the graph. Tell some sort of story and speculate about the differences in the patterns.
+
+> 1. It can be seen from the graph as well as correlation calculation (+0.5), that the variable 'people born in UK' is **moderately positively correlated** to 'votes cast in favour of BREXIT'. 
+> 2. Although, it is not a strong correlation, but this value tell us that there is a **positive relation** between our x and y variable (i.e. people born in UK did vote in favour of BREXIT). 
+> 3. The moderate relationship can be because some people feared wether 'UK should have the power to govern and manage itself' while the others believed that 'EU's more open border policy could do more harm than good to UK'.
+
+
+# Task 4
+
+
+```{r load_animal_rescue_data, warning=FALSE, message=FALSE}
+
+url <- "https://data.london.gov.uk/download/animal-rescue-incidents-attended-by-lfb/8a7d91c2-9aec-4bde-937a-3998f4717cd8/Animal%20Rescue%20incidents%20attended%20by%20LFB%20from%20Jan%202009.csv"
+
+animal_rescue <- read_csv(url,
+                          locale = locale(encoding = "CP1252")) %>% 
+  janitor::clean_names()
+
+
+glimpse(animal_rescue)
+```
+
+Calculating incidents per year
+
+```{r, instances_by_calendar_year}
+
+animal_rescue %>% 
+  dplyr::group_by(cal_year) %>% 
+  summarise(count=n())
+
+```
+
+Calculating incidents per animal group/category and taking out their respective percentages compared to the total
+
+```{r, animal_group_percentages}
+animal_rescue %>% 
+  count(animal_group_parent, name="count", sort=TRUE) %>% 
+  mutate(percent = round(100*count/sum(count),2))
+```
+
+### QUESTION: Do you see anything strange in these tables? 
+
+> 1. The **count of number of incidents per year does not vary much** excpet for 2020 and 2021. It is the highest for 2020 and the lowest for 2021 (because it has only been recorded for 6 months in 2021; yet, the number is relatively high for 6 months, in turn showing an upward trend in the last 2 years).
+> 2. The **highest share** of animals rescued is for - cats, birds, dogs, foxs and the **lowest** for - lamb, bull, tortoise, and unknown undergound animal. 
+
+Converting the `incident_notional_cost` from `chr` to numeric
+
+```{r, parse_incident_cost,message=FALSE, warning=FALSE}
+
+# what type is variable incident_notional_cost from dataframe `animal_rescue`
+typeof(animal_rescue$incident_notional_cost)
+
+# readr::parse_number() will convert any numerical values stored as characters into numbers
+animal_rescue <- animal_rescue %>% 
+
+  # we use mutate() to use the parse_number() function and overwrite the same variable
+  mutate(incident_notional_cost = parse_number(incident_notional_cost))
+
+# incident_notional_cost from dataframe `animal_rescue` is now 'double' or numeric
+typeof(animal_rescue$incident_notional_cost)
+
+```
+
+Now that incident_notional_cost is numeric, calculating summary statistics for each animal group. 
+
+```{r, stats_on_incident_cost,message=FALSE, warning=FALSE}
+
+animal_rescue %>% 
+  group_by(animal_group_parent) %>% 
+  filter(n()>6) %>% 
+ summarise(mean_incident_cost = mean (incident_notional_cost, na.rm=TRUE),
+            median_incident_cost = median (incident_notional_cost, na.rm=TRUE),
+            sd_incident_cost = sd (incident_notional_cost, na.rm=TRUE),
+            min_incident_cost = min (incident_notional_cost, na.rm=TRUE),
+            max_incident_cost = max (incident_notional_cost, na.rm=TRUE),
+            count = n()) %>%
+  arrange(desc(mean_incident_cost))
+```
+
+### QUESTION: Compare the mean and the median for each animal group. waht do you think this is telling us? Anything else that stands out? Any outliers?
+
+> Observations about the mean, median, and outliers of the cost to rescue each animal group:
+>
+> 1. The **mean** costs tells us the average cost to rescue an animal cateogary. It is the highest for - Horse, cow, unknown wild animal, deer and the lowest for - Hamster, squirrel, ferret, and rabbit. 
+> 2. The **median** tells us the middle value of the distribution (the middle of the cost to rescue the animal type). It is the highest for - Horse, cow, snake and the lowest for - Heavey livestock, cat, and hamster.
+> 3. When the mean > median, it is a **positively skewed** distribution (for all animal types except squirrel, ferret, and rabbit) i.e. these 3 are negatively skewed - it is comparatively cheaper to rescue these animals, however, there are few occurances when the cost fluctuates to high values (extreme values).
+> 4. **Outliers**: generally, these are the values that are 3 standard deviations from the mean. They tend to skew the data and can be easily visually spotted through a boxplot. the cateogaries with the most outliers are - bird, cat, deer, dog, fox, and other unkown animals (inclusive of domestic, heavey livestock, and wild animals)
+
+Making a hisogram, density plot, boxplot, and empirical cumulative distribution function to make inferences about the districution of incidents per animal category.
+
+```{r, plots_on_incident_cost_by_animal_group,message=FALSE, warning=FALSE}
+
+# base_plot
+base_plot <- animal_rescue %>% 
+  group_by(animal_group_parent) %>% 
+  filter(n()>6) %>% 
+  ggplot(aes(x=incident_notional_cost))+
+  facet_wrap(~animal_group_parent, scales = "free")+
+  theme_bw()
+
+base_plot + geom_histogram()
+base_plot + geom_density()
+base_plot + geom_boxplot()
+base_plot + stat_ecdf(geom = "step", pad = FALSE) +
+  scale_y_continuous(labels = scales::percent)
+```
+
+### QUESTION: Which of these four graphs do you think best communicates the variability of the `incident_notional_cost` values? Also, can you please tell some sort of story (which animals are more expensive to rescue than others, the spread of values) and speculate about the differences in the patterns.
+
+> Although, the density plot presents a good idea of the distribution of costs, **boxplot** is the best graph to communicate the variability of incident notional costs as it communicates the interquartile range and **outliers** very well. 
+
+#### The **most expensive** animals to rescue are (first being the most expensive):
+> 1. Horse
+> 2. Cow
+> 3. Unknown - farm animal
+> 4. Wild animal
+> 5. Heavey live stock 
+
+#### The **cheapest** animals to rescue are:
+> 1. Squirrels 
+> 2. Ferrets
+> 3. Rabbits
+
+> From these observations, it can be infered that the **size/weight** of the animal is positively correlated with the cost of rescuing (i.e. the heavier or bigger the animal the more time it takes to be resuced incurring higher costs). Further, another consideration could be that the more dangerous the animal the more time consuming it is to rescue, in turn incurring high costs (snakes are more expensive to rescue but are smaller than dogs - it could be that a snake's rescuing may require more protective equipments increasing the average time and costs). It is also noteworthy to mention that the count of cats, dogs, and birds being rescued is the highest (may be due to in house incidents with pets).
+>
+> **Spread of the distributions**: Although there are no normal distributions, some of the higher skewed costs for resuing animals are for - cats, birds, deers, dogs, fox, and other unkown animals. This means that the cost to rescue the above-mentioned animals is mostly lower, however, they do have a few extreme values (outliers). 
+
+
+# TASK 5: Details
+-   Who did you collaborate with: None
+-   Approximately how much time did you spend on this problem set: 4 hours
+-   What, if anything, gave you the most trouble: Time consuming to understand the dataset
