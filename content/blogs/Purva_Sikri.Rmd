@@ -1,14 +1,17 @@
 ---
-categories: 
+categories:
 - ""
 - ""
-date: "2017-10-31T22:42:51-5:00"
-description: Hi i am Purva Sikri CDSFCSDF and this is my project.
+date: "2017-10-31T22:42:51-05:00"
+description: Nullam et osdsdrci eu lorem consequat tincidunt vivamus et sagittis magna
+  sed nunc rhoncus condimentum sem. In v efficitur ligula tate urna. Maecenas massa
+  sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
+  consequat tincidunt. Vivamus et sagittis tempus.
 draft: false
-image: img_preprog_website.jpg 
+image: pic07.jpg
 keywords: ""
 slug: purva
-title: About me
+title: Aliquam
 ---
 
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
@@ -130,7 +133,7 @@ Creating a plot of life expectancy over time grouped by continent.
 
 
 ```{r load_brexit_data, warning=FALSE, message=FALSE}
-brexit_results <- read.csv("brexit_results.csv")
+brexit_results <- read_csv(here::here("data","brexit_results1.csv"))
 getwd
 glimpse(brexit_results)
 ```
