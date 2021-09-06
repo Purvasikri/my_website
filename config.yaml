@@ -1,6 +1,6 @@
 baseURL: https://purvasikri.netlify.app/
 languageCode: en-us
-title: Portfolio website for Purva Sikri
+title: Portfolio website DSDSDF for Purva Sikri
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
@@ -82,7 +82,6 @@ params:
     enable: yes
     showcase:
       - image: blog1_website.jpeg
-        config.yaml: \themes\forty\static\img
         subtitle: A short Introduction
         title: About me
         slug: purva
@@ -107,18 +106,6 @@ params:
         subtitle: Feugiat Amet Tempus
         title: Etiam
         url: blogs/ipsum
----
-categories: 
-- ""
-- ""
-date: "2017-10-31T22:42:51-5:00"
-description: Hi i am Purva Sikri and this is my project.
-draft: false
-image: img_preprog_website.jpg 
-keywords: ""
-slug: purva
-title: About me
----
   two:
     buttonText: Get Started
     enable: yes
@@ -130,3 +117,5 @@ title: About me
       amet pharetra et feugiat tempus."
     title: Massa libero
     url: blogs
+    
+
