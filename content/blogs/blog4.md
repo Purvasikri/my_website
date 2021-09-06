@@ -11,5 +11,5 @@ draft: false
 image: pic07.jpg
 keywords: ""
 slug: purva
-title: Aliquam
+title: Purva
 ---
