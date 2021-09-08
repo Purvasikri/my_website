@@ -13,7 +13,7 @@ title: About me
 
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and other tidyverse packaggtes
-library(gapminder)  # gapminder dataset
+library(gapminder)  # gapminder data
 library(here)
 library(janitor)
 library(ggplot2)
