@@ -12,7 +12,7 @@ title: About me
 ---
 
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
-library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packaggtes
+library(tidyverse)  # Load ggplot2, dplyr, and other tidyverse packaggtes
 library(gapminder)  # gapminder dataset
 library(here)
 library(janitor)
@@ -182,7 +182,7 @@ ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
 
 > 1. It can be seen from the graph as well as correlation calculation (+0.5), that the variable 'people born in UK' is **moderately positively correlated** to 'votes cast in favour of BREXIT'. 
 > 2. Although, it is not a strong correlation, but this value tell us that there is a **positive relation** between our x and y variable (i.e. people born in UK did vote in favour of BREXIT). 
-> 3. The moderate type of relationship can be because some people feared wether 'UK should have the power to govern and manage itself' while the others believed that 'EU's more open border policy could do more harm than good to UK'.
+> 3. The moderate type of relationship can be because some people feared wether 'UK should have the power to govern and manage itself' while the others believed that 'EU's more open border policy could do more harm than good to the  UK'.
 
 
 # Task 4
@@ -207,8 +207,12 @@ Calculating incidents per year
 animal_rescue %>% 
   dplyr::group_by(cal_year) %>% 
   summarise(count=n())
-
 ```
+
+```{r}
+typeof(animal_rescue$incident_notional_cost)
+```
+
 
 Calculating incidents per animal group/category and taking out their respective percentages compared to the total
 
@@ -249,7 +253,7 @@ animal_rescue %>%
 > 3. When the mean > median, it is a **positively skewed** distribution (for all animal types except squirrel, ferret, and rabbit) i.e. these 3 are negatively skewed - it is comparatively cheaper to rescue these animals, however, there are few occurances when the cost fluctuates to high values (extreme values).
 > 4. **Outliers**: generally, these are the values that are 3 standard deviations from the mean. They tend to skew the data and can be easily visually spotted through a boxplot. the cateogaries with the most outliers are - bird, cat, deer, dog, fox, and other unkown animals (inclusive of domestic, heavey livestock, and wild animals)
 
-Making a hisogram, density plot, boxplot, and empirical cumulative distribution function to make inferences about the districution of incidents per animal category.
+Making a hisogram, density plot, boxplot, and empirical cumulative distribution function in order to make inferences about the districution of incidents per animal category.
 
 ```{r, plots_on_incident_cost_by_animal_group,message=FALSE, warning=FALSE}
 
