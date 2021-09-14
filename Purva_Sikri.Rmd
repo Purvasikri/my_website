@@ -13,7 +13,7 @@ title: About me
 
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packaggtes
-library(gapminder)  # gapminder dataset
+library(gapminder)  # gapminder 123 dataset
 library(here)
 library(janitor)
 library(ggplot2)
@@ -286,11 +286,11 @@ base_plot + stat_ecdf(geom = "step", pad = FALSE) +
   scale_y_continuous(labels = scales::percent)
 ```
 
-### QUESTION: Which of these four graphs do you think best communicates the variability of the `incident_notional_cost` values? Also, can you please tell some sort of story (which animals are more expensive to rescue than others, the spread of values) and speculate about the differences in the patterns.
+### QUESTION: Which of these four graphs do you think best communicates the variability of the `incident_notional_cost` values? Also, can you please tell some sort of story (which animals are more expensive to rescue than others, the spread of values) and speculate about the differences in the patterns?
 
 > Although, the density plot presents a good idea of the distribution of costs, **boxplot** is the best graph to communicate the variability of incident notional costs as it communicates the interquartile range and **outliers** very well. 
 
-#### The **most expensive** animals to rescue are (first being the most expensive):
+#### The **mosttttt expensive** animals to rescue are (first being the most expensive):
 > 1. Horse
 > 2. Cow
 > 3. Unknown - farm animal
@@ -304,7 +304,7 @@ base_plot + stat_ecdf(geom = "step", pad = FALSE) +
 
 > From these observations, it can be infered that the **size/weight** of the animal is positively correlated with the cost of rescuing (i.e. the heavier or bigger the animal the more time it takes to be resuced incurring higher costs). Further, another consideration could be that the more dangerous the animal the more time consuming it is to rescue, in turn incurring high costs (snakes are more expensive to rescue but are smaller than dogs - it could be that a snake's rescuing may require more protective equipments increasing the average time and costs). It is also noteworthy to mention that the count of cats, dogs, and birds being rescued is the highest (may be due to in house incidents with pets).
 >
-> **Spread of the distributions**: Although there are no normal distributions, some of the higher skewed costs for resuing animals are for - cats, birds, deers, dogs, fox, and other unkown animals. This means that the cost to rescue the above-mentioned animals is mostly lower, however, they do have a few extreme values (outliers). 
+> **Spread of the distributions**: Although, there are no normal distributions, some of the higher skewed costs for resuing animals are for - cats, birds, deers, dogs, fox, and other unkown animals. This means that the cost to rescue the above-mentioned animals is mostly lower, however, they do have a few extreme values i.e. outliers. 
 
 
 # TASK 5: Details

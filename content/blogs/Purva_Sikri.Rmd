@@ -263,7 +263,7 @@ animal_rescue %>%
 
 ### QUESTION: Compare the mean and the median for each animal group. waht do you think this is telling us? Anything else that stands out? Any outliers?
 
-> Observations about the mean, median, and outliers of the cost to rescue each animal group:
+> imp: Observations about the mean, median, and outliers of the cost to rescue each animal group:
 >
 > 1. The **mean** costs tells us the average cost to rescue an animal cateogary. It is the highest for - Horse, cow, unknown wild animal, deer and the lowest for - Hamster, squirrel, ferret, and rabbit. 
 > 2. The **median** tells us the middle value of the distribution (the middle of the cost to rescue the animal type). It is the highest for - Horse, cow, snake and the lowest for - Heavey livestock, cat, and hamster.
