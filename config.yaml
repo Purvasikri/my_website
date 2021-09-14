@@ -8,13 +8,8 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-<<<<<<< HEAD
-      THE FIRST (1) WEBSITE DESIGNED
-      AND RELEASED BY PURVA SIKRI !!!!!!!
-=======
       THE FIRST WEBSITE DESIGNED
-      BY PURVA SIKRI!!
->>>>>>> 8124700166da0df43bff8c933eb25d1ffb3c7650
+      AND RELEASED BY PURVA SIKRI.
     title: Hi, my name is Purva Sikri
   blog: {}
   contact:
@@ -86,46 +81,35 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic1web.jpg
+      - image: Hello.jpg
         subtitle: A short Introduction
         title: About me
         slug: purva
         url: blogs/purva
-      - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Tempus
+      - image: Bitcoin.jpg
+        subtitle: Case study competition
+        title: Supply chain marries blockchaon
         url: blogs/tempus
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
+      - image: Research.jpg
+        subtitle: Cognitive capture; a euphemism for malfeasence?
+        title: Research papers (Finance)
         url: blogs/magna
-      - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
+      - image: dataA.jpg
+        subtitle: R-studio data analytics 
+        title: Recent Projects
         url: blogs/ipsum
-      - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit t
-        title: Consequat
+      - image: RTI.jpg
+        subtitle: Right to Information during COVID
+        title: Research paper (Social) 
         url: blogs/ipsum
-      - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Etiam
+      - image: data_lasttone.jpg
+        subtitle: It's importance to a manager 
+        title: Data Analytics 
         url: blogs/ipsum
   two:
     buttonText: Get Started
     enable: yes
-    subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
-      \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
-<<<<<<< HEAD
-      condimentuafjxalisx m sem. In efficb cnfj itur ligula tate urna. Maecenas laoreet massa vel lacinia
-      pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
-      Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
-      amet pharetra et feugiat tempus."
-=======
-      condimentum sem. In efficrghvkvd ligula tate urna. Maecenas laoreet massa vel lacinia
-      pellenteahakjshabsak tis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
-      amet pharetrdwtd  ew t feugiat tempus."
->>>>>>> 8124700166da0df43bff8c933eb25d1ffb3c7650
+    subtitle: "Hello"
     title: Massa libero
     url: blogs
     
