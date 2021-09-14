@@ -1,6 +1,6 @@
 baseURL: https://purvasikri.netlify.app/
 languageCode: en-us
-title: Portfolio website DSDSDF for Purva Sikri
+title: Portfolio website for Purva Sikri
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
@@ -8,21 +8,26 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
+<<<<<<< HEAD
       THE FIRST (1) WEBSITE DESIGNED
       AND RELEASED BY PURVA SIKRI !!!!!!!
+=======
+      THE FIRST WEBSITE DESIGNED
+      BY PURVA SIKRI!!
+>>>>>>> 8124700166da0df43bff8c933eb25d1ffb3c7650
     title: Hi, my name is Purva Sikri
   blog: {}
   contact:
     address:
       - city: London, NW8 9NY
-        country: United Kingdom
+        country: United Kingdom.
         street: Halll Road
         title: Address
     buttonClear: Clear
     buttonSend: Send message
     email:
       - email: psikri.mam2022@london.edu
-        title: Email
+        title: Email ID
     enable: yes
     phone:
       - phone: (+44) 07376136866
@@ -81,7 +86,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: blog1_website.jpeg
+      - image: pic1web.jpg
         subtitle: A short Introduction
         title: About me
         slug: purva
@@ -99,7 +104,7 @@ params:
         title: Ipsum
         url: blogs/ipsum
       - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
+        subtitle: Ipsum Dolor Sit t
         title: Consequat
         url: blogs/ipsum
       - image: pic06.jpg
@@ -111,10 +116,16 @@ params:
     enable: yes
     subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
       \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
+<<<<<<< HEAD
       condimentuafjxalisx m sem. In efficb cnfj itur ligula tate urna. Maecenas laoreet massa vel lacinia
       pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
       Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
       amet pharetra et feugiat tempus."
+=======
+      condimentum sem. In efficrghvkvd ligula tate urna. Maecenas laoreet massa vel lacinia
+      pellenteahakjshabsak tis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
+      amet pharetrdwtd  ew t feugiat tempus."
+>>>>>>> 8124700166da0df43bff8c933eb25d1ffb3c7650
     title: Massa libero
     url: blogs
     
