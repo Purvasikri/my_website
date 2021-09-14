@@ -8,7 +8,7 @@ description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis mag
   sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
   consequat tincidut. Vivamus et sagittis tempus.
 draft: false
-image: pic07.jpg
+image: RTI.jpg
 keywords: ""
 slug: purva
 title: Purva
@@ -288,6 +288,8 @@ base_plot + geom_density()
 base_plot + geom_boxplot()
 base_plot + stat_ecdf(geom = "step", pad = FALSE) +
   scale_y_continuous(labels = scales::percent)
+
+getwd()
 ```
 
 ### QUESTION: Which of these four graphs do you think best communicates the variability of the `incident_notional_cost` values? Also, can you please tell some sort of story (which animals are more expensive to rescue than others, the spread of values) and speculate about the differences in the patterns.
