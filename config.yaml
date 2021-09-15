@@ -87,8 +87,8 @@ params:
         url: blogs/purva
       - image: Bitcoin.jpg
         subtitle: Case study competition
-        title: Supply chain marries blockchaon
-        url: blogs/Blockchain
+        title: Supply chain marries Blockchain
+        url: blogs/blockchain
       - image: Research.jpg
         subtitle: Cognitive capture; a euphemism for malfeasence?
         title: Research papers - Finance
