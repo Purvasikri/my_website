@@ -93,13 +93,13 @@ params:
         subtitle: Cognitive capture; a euphemism for malfeasence?
         title: Research papers (Finance)
         url: blogs/magna
-      - image: dataA.jpg
-        subtitle: R-studio data analytics 
-        title: Recent Projects
-        url: blogs/RTI
       - image: RTI.jpg
-        subtitle: Right to Information during COVID
-        title: Research paper (Social) 
+        subtitle: Right to Information during COVID 
+        title: Research paper (Social)
+        url: blogs/RTI
+      - image: dataA.jpg
+        subtitle: R-studio data analytics
+        title: Recent Projects
         url: blogs/ipsum
       - image: data_lasttone.jpg
         subtitle: It's importance to a manager 
