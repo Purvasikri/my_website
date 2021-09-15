@@ -3,7 +3,6 @@ languageCode: en-us
 title: Portfolio website by Purva Sikri
 theme: forty
 googleAnalytics: ''
-disqusShortname: ''
 params:
   banner:
     buttonText: Get Started
