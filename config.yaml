@@ -91,11 +91,11 @@ params:
         url: blogs/tempus
       - image: Research.jpg
         subtitle: Cognitive capture; a euphemism for malfeasence?
-        title: Research papers (Finance)
+        title: Research papers - Finance
         url: blogs/magna
       - image: RTI.jpg
         subtitle: Right to Information during COVID 
-        title: Research paper (Social)
+        title: Research paper - Social
         url: blogs/RTI
       - image: dataA.jpg
         subtitle: R-studio data analytics
