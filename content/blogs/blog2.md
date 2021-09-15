@@ -3,10 +3,12 @@ categories:
 - ""
 - ""
 date: "2017-10-31T22:26:09-05:00"
-description: Lorem Etiam Nullam
+description: ""
 draft: false
-image: Bitcoin.jpg
+image: Capture.png
 keywords: ""
 slug: magna
-title: Magna
+title: Research paper on Media, Banking, and State capture
 ---
+
+While the Media agencies, Financial sector, and State agencies are captured - is the general public even getting the right information? 
