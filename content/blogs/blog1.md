@@ -5,10 +5,10 @@ categories:
 date: "2017-10-31T21:28:43-05:00"
 description: ""
 draft: false
-image: Hello.jpg
+image: RTIpaper.png
 keywords: ""
-slug: ipsum
-title: Ipsum
+slug: RTI
+title: Right to Information during COVID-19
 ---
 
-Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
+How the right to information was hampered during COVID-19 not only due to the lack of data but also the cognitive capture of media channels by the governemnt. This is a published paper that presents a comparative perspective between Inida and the EU.

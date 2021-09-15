@@ -96,7 +96,7 @@ params:
       - image: dataA.jpg
         subtitle: R-studio data analytics 
         title: Recent Projects
-        url: blogs/ipsum
+        url: blogs/RTI
       - image: RTI.jpg
         subtitle: Right to Information during COVID
         title: Research paper (Social) 
