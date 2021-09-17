@@ -17,6 +17,8 @@ title: Purva
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
+<div id="setting-up-r-to-a-default-text-and-figure-type" class="section level3">
+<h3>Setting up R to a default text and figure type</h3>
 <pre class="r"><code>knitr::opts_chunk$set(
   message = FALSE, 
   warning = FALSE, 
@@ -45,6 +47,7 @@ library(openintro)
 library(RSQLite)
 library(dbplyr)
 library(DBI)</code></pre>
+</div>
 <div id="youth-risk-behavior-surveillance" class="section level1">
 <h1>Youth Risk Behavior Surveillance</h1>
 <p>Every two years, the Centers for Disease Control and Prevention conduct the <a href="https://www.cdc.gov/healthyyouth/data/yrbs/index.htm">Youth Risk Behavior Surveillance System (YRBSS)</a> survey, where it takes data from high schoolers (9th through 12th grade), to analyze health patterns. You will work with a selected group of variables from a random sample of observations during one of the years the YRBSS was conducted.</p>
@@ -460,8 +463,6 @@ Nonetheless, it is important to keep in mind that there are some people that do 
 </div>
 <div id="imdb-ratings-differences-between-directors" class="section level1">
 <h1>IMDB ratings: Differences between directors</h1>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;images&quot;, &quot;directors.png&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/purvasikri/Desktop/my_website/images/directors.png" width="100%" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>Answer below</p>
 </blockquote>
@@ -666,10 +667,6 @@ omega %&gt;%
 </div>
 <div id="challenge-1-brexit-plot" class="section level1">
 <h1>Challenge 1: Brexit plot</h1>
-<pre class="r"><code>knitr::include_graphics(here::here(&#39;images&#39;, &#39;brexit.png&#39;), error=F)</code></pre>
-<p><img src="/Users/purvasikri/Desktop/my_website/images/brexit.png" width="100%" style="display: block; margin: auto;" /></p>
-<div id="replicating-brexit-plot" class="section level3">
-<h3>Replicating Brexit plot</h3>
 <pre class="r"><code>brexit &lt;- read_csv(here::here(&#39;data&#39;, &#39;brexit_results.csv&#39;))
 glimpse(brexit) #exporing the brexit data frame </code></pre>
 <pre><code>## Rows: 632
@@ -707,7 +704,6 @@ plot &lt;- brexit %&gt;%
 ggsave(file=&#39;brexit_plot.png&#39;, plot=plot, width=14, height=8)
 knitr::include_graphics(&quot;brexit_plot.png&quot;, error=F)</code></pre>
 <p><img src="brexit_plot.png" width="2100" style="display: block; margin: auto;" /></p>
-</div>
 </div>
 <div id="challenge-2-gdp-components-countries" class="section level1">
 <h1>Challenge 2: GDP components countries</h1>
@@ -754,8 +750,6 @@ glimpse(tidy_GDP_data)</code></pre>
 ## $ IndicatorName &lt;chr&gt; &quot;Final consumption expenditure&quot;, &quot;Final consumption expe…
 ## $ Year          &lt;dbl&gt; 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 19…
 ## $ Value         &lt;dbl&gt; 5.56, 5.33, 5.20, 5.75, 6.15, 6.32, 6.37, 6.90, 7.09, 6.…</code></pre>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;images&quot;, &quot;gdp1.png&quot;), error=F)</code></pre>
-<p><img src="/Users/purvasikri/Desktop/my_website/images/gdp1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="replicating-the-first-gdp-plot" class="section level3">
 <h3>Replicating the first GDP plot</h3>
@@ -782,8 +776,6 @@ plot &lt;- tidy_GDP_data %&gt;%
 ggsave(file=&#39;gdp1_plot.png&#39;, plot=plot, width=8, height=5)
 knitr::include_graphics(&quot;gdp1_plot.png&quot;, error=F)</code></pre>
 <p><img src="gdp1_plot.png" width="1200" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;images&quot;, &quot;gdp2.png&quot;), error=F)</code></pre>
-<p><img src="/Users/purvasikri/Desktop/my_website/images/gdp2.png" width="100%" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>Answer below</p>
 </blockquote>

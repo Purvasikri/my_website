@@ -14,6 +14,9 @@ slug: purva
 title: Purva
 ---
 
+
+### Setting up R to a default text and figure type
+
 ```{r, setup}
 knitr::opts_chunk$set(
   message = FALSE, 
@@ -211,10 +214,6 @@ null_dist %>%
 
 # IMDB ratings: Differences between directors
 
-```{r directors, out.width="100%"}
-knitr::include_graphics(here::here("images", "directors.png"), error = FALSE)
-```
-
 > Answer below
 
 $H_0: \mu_a - \mu_b == 0$
@@ -387,12 +386,6 @@ On a closer look, some of the possible inferencs are:
 
 # Challenge 1: Brexit plot
 
-```{r brexit_challenge, out.width="100%"}
-knitr::include_graphics(here::here('images', 'brexit.png'), error=F)
-```
-
-### Replicating Brexit plot
-
 ```{r replicate_brexit_plot}
 brexit <- read_csv(here::here('data', 'brexit_results.csv'))
 glimpse(brexit) #exporing the brexit data frame 
@@ -465,10 +458,6 @@ tidy_GDP_data  <-  UN_GDP_data %>%
 glimpse(tidy_GDP_data)
 ```
 
-```{r gdp1, out.width="100%"}
-knitr::include_graphics(here::here("images", "gdp1.png"), error=F)
-```
-
 ### Replicating the first GDP plot
 
 ```{r replicate_plot_gdp1}
@@ -495,10 +484,6 @@ plot <- tidy_GDP_data %>%
 
 ggsave(file='gdp1_plot.png', plot=plot, width=8, height=5)
 knitr::include_graphics("gdp1_plot.png", error=F)
-```
-
-```{r gdp2, out.width="100%"}
-knitr::include_graphics(here::here("images", "gdp2.png"), error=F)
 ```
 
 > Answer below
