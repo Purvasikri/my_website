@@ -57,7 +57,7 @@ params:
         label: LinkedIn
         url: www.linkedin.com/in/purvasikriconsulting
   image: ''
-  name: Your name
+  name: Purva Sikri
   navigation:
     button1:
       - name: Get Started
