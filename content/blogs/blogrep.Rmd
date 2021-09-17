@@ -5,31 +5,29 @@ categories:
 date: "2017-10-31T22:26:09-05:00"
 description: ""
 draft: false
+image: Capture.png
 keywords: ""
 slug: magna
 title: Research papers and Articles 
 ---
 
-
 *Research Paper 1:* 
-> <img src="https://drive.google.com/file/d/1Tc26fOAsZvIzSryPMN-9v29x-LjO8HrQ/view?usp=sharing">  
 
-While the Media agencies, Financial sector, and State agencies are captured - is the general public even getting the right information? the paper titled **"Cognitive capture: a euphemism for malfeasance?"** explains what capture means, is types, and how any form of it (financial, media, or state) are detrimental to any country. 
-
-The full research paper is available for view and download here [Cognitive capture](https://drive.google.com/file/d/1msoVe4j1qUo3nLU_CUcrLPBaA4go1zns/view?usp=sharing)
-
----
-
-*Research Paper 2:*
-> <img src="https://drive.google.com/file/d/1VAERyb_AmrgX5fI5d6OKAaT093KsnEE4/view?usp=sharing"> 
-
-The second paper titled **"Impact of COVID-19 on RTI, a comparative perspective from India to EU"** delineates the wringing of Right to Information during the COVID-19 pandemic. It delves into the political, social, and economic situation of India and the EU to understand why information asymmetry was so rampant and whether the media was captured by the government (out of fear or bribery) or were the polices such that RTI was given a much lower stance and constantly behind.  
+This paper titled **"Impact of COVID-19 on RTI, a comparative perspective from India to EU"** delineates the wringing of Right to Information during the COVID-19 pandemic. It delves into the political, social, and economic situation of India and the EU to understand why information asymmetry was so rampant and whether the media was captured by the government (out of fear or bribery) or were the polices such that RTI was given a much lower stance and constantly behind.  
 
 The full research paper is available for view and download here [RTI during COVID-19](https://drive.google.com/file/d/1yLdU4vgox8-lbcMZah_dI2N4zk5x-JMZ/view?usp=sharing)
 
 ---
 
-*Article 1*
+*Research Paper 2:*
+
+While the Media agencies, Financial sector, and State agencies are captured - is the general public even getting the right information? the paper titled **"Cognitive capture: a euphemism for malfeasance?"** explains what capture means, its types, and how any form of it (financial, media, or state) are detrimental to any country. 
+
+The full research paper is available for view and download here [Cognitive capture](https://drive.google.com/file/d/1msoVe4j1qUo3nLU_CUcrLPBaA4go1zns/view?usp=sharing)
+
+---
+
+*Article 1:*
 
 Assessing whether electronic vehicles are currently feasible in India or a far cry. An analysis on whether the infrastructure is capable of sustaining the new technology. Further, analysing that despite assuaging the issues of rampant pollution, when will the technology be affordable to the midlle class, and if so, when will teher be enoigh charging points to cater to the needs of 1.8 billion people?
 
@@ -37,7 +35,7 @@ The full article is available for view and download here [Electronic vehicles](h
 
 ---
 
-*Article 2*
+*Article 2:*
 
 Although patents are aimed at providing benefits to the inventor, while keeping in mind the best interests of public, sometimes this rudimental optimal point of mutual benefit is not achieved. Reaching this point is a convoluted process; as it is where ethics and law converge. Not patenting a drug could lead to low levels of motivation amongst the investors, while patenting it could lead to unwarranted animal/human testing, lack of access of the drug, increase in costs, and other dilemmas regarding patenting genetic material. 
 
