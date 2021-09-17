@@ -83,7 +83,7 @@ params:
       - image: Hello.jpg
         subtitle: A short Introduction
         title: About me
-        slug: purva
+        slug: purva1
         url: blogs/purva
       - image: Bitcoin.jpg
         subtitle: Case study competition
