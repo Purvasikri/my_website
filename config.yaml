@@ -86,8 +86,8 @@ params:
         slug: purva
         url: blogs/purva
       - image: Bitcoin.jpg
-        subtitle: Case study competition
-        title: Supply chain marries Blockchain
+        subtitle: Data analysis
+        title: R-studio data analytics
         url: blogs/blockchain
       - image: Research.jpg
         subtitle: Cognitive capture and Right to information 
