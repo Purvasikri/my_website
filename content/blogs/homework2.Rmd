@@ -5,10 +5,9 @@ categories:
 date: "2017-10-31T21:28:43-05:00"
 description: ""
 draft: false
-image: rmds.png
 keywords: ""
 slug: rti1
-title: Rmarkdown project on dplyr, tidyverse, ggplot, and t-test (using bootstrap).
+title: Dplyr, tidyverse, ggplot, and t-test (using bootstrap).
 ---
 
 After cleaning and performing an exploratory data analysis on multiple data sets, ggplot was used to visualise and gather information about the spread of the data. Inferences were made from various types of plots and numerical relations (e.g. correlation).  
