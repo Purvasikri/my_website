@@ -7,7 +7,7 @@ description: ""
 draft: false
 image: 
 keywords: ""
-slug: magna
+slug: magna1
 title: Research papers and Articles 
 ---
 
