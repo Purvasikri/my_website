@@ -94,9 +94,9 @@ params:
         title: Research papers - Financial and Social
         url: blogs/magna
       - image: RTI.jpg
-        subtitle: Right to Information during COVID 
-        title: Research paper - Social
-        url: blogs/RTI
+        subtitle: Tidyverse, dplyr, ggplot, and t-test (using bootstrap).
+        title: Rmarkdown project 
+        url: blogs/rti1
       - image: dataA.jpg
         subtitle: R-studio data analytics
         title: Recent Projects
