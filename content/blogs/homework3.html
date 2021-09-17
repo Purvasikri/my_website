@@ -2,16 +2,13 @@
 categories:
 - ""
 - ""
-date: "2017-10-31T22:42:51-05:00"
-description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
-  sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa
-  sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
-  consequat tincidunt. Vivamus et sagittis tempus.
+date: "2017-10-31T22:26:13-05:00"
+description: ""
 draft: false
-image: pic07.jpg
+image: Bitcoin_inside.png
 keywords: ""
-slug: purva
-title: Purva
+slug: blockchain
+title: EDA and data analysis  
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
@@ -704,159 +701,7 @@ plot &lt;- brexit %&gt;%
 ggsave(file=&#39;brexit_plot.png&#39;, plot=plot, width=14, height=8)
 knitr::include_graphics(&quot;brexit_plot.png&quot;, error=F)</code></pre>
 <p><img src="brexit_plot.png" width="2100" style="display: block; margin: auto;" /></p>
-</div>
-<div id="challenge-2-gdp-components-countries" class="section level1">
-<h1>Challenge 2: GDP components countries</h1>
-<pre class="r"><code>UN_GDP_data &lt;- read_excel(here::here(&quot;data&quot;, &quot;Download-GDPconstant-USD-countries.xls&quot;), # Excel filename
-                sheet=&quot;Download-GDPconstant-USD-countr&quot;, # Sheet name
-                skip=2) # Number of rows to skip</code></pre>
-<div id="preparing-gdp-data" class="section level3">
-<h3>Preparing GDP data</h3>
-<pre class="r"><code>#creating a new data set after converting to the long format, transforming the figure to billions, and simplifying the indicator names
-
-tidy_GDP_data  &lt;-  UN_GDP_data %&gt;%
-  pivot_longer(cols = 4:51, names_to = &#39;Year&#39;, values_to = &#39;Value&#39;) %&gt;% 
-  mutate(
-    Value = Value/1e9,
-    IndicatorName = case_when(
-      IndicatorName == &quot;Household consumption expenditure (including Non-profit institutions serving households)&quot; ~ &quot;Household expenditure&quot;,
-      IndicatorName == &quot;General government final consumption expenditure&quot; ~ &quot;Government expenditure&quot;,
-      IndicatorName == &quot;Gross fixed capital formation (including Acquisitions less disposals of valuables&quot; ~&quot;Gross fixed capital formation&quot;,
-      IndicatorName == &quot;Exports of goods and services&quot; ~ &quot;Exports&quot;,
-      IndicatorName == &quot;Imports of goods and services&quot; ~ &quot;Imports&quot;,
-      IndicatorName == &quot;Gross Domestic Product (GDP)&quot; ~ &quot;GDP&quot;,
-      IndicatorName == &quot;Agriculture, hunting, forestry, fishing (ISIC A-B)&quot; ~ &quot;AHFF&quot;,
-      IndicatorName == &quot;Mining, Manufacturing, Utilities (ISIC C-E)&quot; ~ &quot;MMU&quot;,
-      IndicatorName == &quot;Manufacturing (ISIC D)&quot; ~ &quot;Manu&quot;,
-      IndicatorName == &quot;Construction (ISIC F)&quot; ~ &quot;Cons&quot;,
-      IndicatorName == &quot;Wholesale, retail trade, restaurants and hotels (ISIC G-H)&quot; ~ &quot;WRRH&quot;,
-      IndicatorName == &quot;Transport, storage and communication (ISIC I)&quot; ~ &quot;TSC&quot;,
-      IndicatorName == &quot;Other Activities (ISIC J-P)&quot; ~ &quot;Others&quot;,
-      IndicatorName == &quot;Total Value Added&quot; ~ &quot;Total&quot;,
-      TRUE ~ as.character(IndicatorName)
-    ),
-    #converting the year to a date format
-    Year=year(parse_datetime(Year, format=&#39;%Y&#39;)) 
-  ) %&gt;%
-  #removing the NA&#39;s
-  filter(!is.na(Value)) 
-
-#Viewing the tidy data just created 
-glimpse(tidy_GDP_data)</code></pre>
-<pre><code>## Rows: 161,459
-## Columns: 5
-## $ CountryID     &lt;dbl&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,…
-## $ Country       &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanista…
-## $ IndicatorName &lt;chr&gt; &quot;Final consumption expenditure&quot;, &quot;Final consumption expe…
-## $ Year          &lt;dbl&gt; 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 19…
-## $ Value         &lt;dbl&gt; 5.56, 5.33, 5.20, 5.75, 6.15, 6.32, 6.37, 6.90, 7.09, 6.…</code></pre>
-</div>
-<div id="replicating-the-first-gdp-plot" class="section level3">
-<h3>Replicating the first GDP plot</h3>
-<pre class="r"><code>#Creating a set the country names and indicators needed for analysis
-country_list &lt;- c(&quot;United States&quot;, &quot;India&quot;, &quot;Germany&quot;)
-gdp1_indicators = c(&quot;Gross capital formation&quot;, &quot;Exports&quot;, &quot;Government expenditure&quot;, &quot;Household expenditure&quot;, &quot;Imports&quot;)
-
-#Creating line graph for germany, india, and united states along with their indicators
-plot &lt;- tidy_GDP_data %&gt;%
-  filter(Country %in% country_list, IndicatorName %in% gdp1_indicators) %&gt;%
-  ggplot(aes(x=Year, y=Value)) +
-  #coloring the lines by the indicator names
-  geom_line(aes(colour=IndicatorName)) +
-  #making a separate plot for each country
-  facet_wrap(~Country) +
-  theme_bw() +
-  scale_colour_discrete(&quot;Components of GDP&quot;) +
-  labs(x=&quot;&quot;,
-       y=&quot;Billion US$&quot;,
-       title=&quot;GDP components over time&quot;,
-       subtitle=&quot;In constant 2010 USD&quot;) +
-  NULL
-
-ggsave(file=&#39;gdp1_plot.png&#39;, plot=plot, width=8, height=5)
-knitr::include_graphics(&quot;gdp1_plot.png&quot;, error=F)</code></pre>
-<p><img src="gdp1_plot.png" width="1200" style="display: block; margin: auto;" /></p>
-<blockquote>
-<p>Answer below</p>
-</blockquote>
-<p>This plot depicts the % of government expenditure, gross capital formation, household expenditure, and net exports as a function of the respective country’s income.</p>
-<p><strong>India</strong> - With the largest amount being spent on household expenditure, the gross capital formation is increasing while the household expenditure has started to decrease (considering that India is a developing country with low income, it is understandable that a huge chunk of income goes towards household expenses. However, the decrease in % spent on household income can be due to the improvement in the economy).</p>
-<p><strong>Germany</strong> - They have relatively high exports when compared to India and US which can be allocated to the high exports from the automative industry (better technology).</p>
-<p><strong>US</strong> - Just like Germany, the government expenditure and gross capital formation is at approximately 20% of income (however, India has grown to approximately 40%). Also, over the years the gross capital expenditure has taken over the government expenditure, showing that now people are investing more capital in the country than the governemnt.
-Nonetheless, we can not compare the expenditures of these countries in absolute terms as all these data points are a % of income and the income of each country varies.</p>
-</div>
-<div id="replicating-the-second-gdp-plot" class="section level3">
-<h3>Replicating the second GDP plot</h3>
-<pre class="r"><code>gdp2_filter = c(&quot;Government expenditure&quot;, &quot;Gross capital formation&quot;, &quot;Household expenditure&quot;, &quot;Exports&quot;, &quot;Imports&quot;, &quot;GDP&quot;)
-gdp2_indicators = c(&quot;Government expenditure&quot;, &quot;Gross capital formation&quot;, &quot;Household expenditure&quot;, &quot;Net Exports&quot;)
-
-wide_GDP_data &lt;- tidy_GDP_data %&gt;%
-  filter(Country %in% country_list, IndicatorName %in% gdp2_filter) %&gt;%
- mutate(IndicatorName = case_when(
-    IndicatorName == &quot;Government expenditure&quot; ~ &quot;G&quot;,
-    IndicatorName == &quot;Gross capital formation&quot; ~ &quot;I&quot;,
-    IndicatorName == &quot;Household expenditure&quot; ~ &quot;C&quot;,
-    TRUE ~ as.character(IndicatorName))) %&gt;%
-  pivot_wider(
-    names_from=IndicatorName,
-    values_from=Value) %&gt;%
-  mutate(
-    NetExports=Exports-Imports,
-    GDPManual=G+I+C+NetExports,
-    C=C/GDPManual,
-    I=I/GDPManual,
-    G=G/GDPManual,
-    NetExports=NetExports/GDPManual,
-    GDPDifferencePct=(GDPManual-GDP)/GDP*100)
-
-
-wide_GDP_data2&lt;- wide_GDP_data %&gt;% 
-  select(Country, Year, C, G, I, NetExports) %&gt;%
-  pivot_longer(cols=3:6, names_to=&#39;IndicatorName&#39;, values_to=&#39;Proportion&#39;) %&gt;%
-  mutate(IndicatorName = case_when(
-    IndicatorName == &quot;G&quot; ~ &quot;Government Expenditure&quot;,
-    IndicatorName == &quot;I&quot; ~ &quot;Gross capital formation&quot;,
-    IndicatorName == &quot;C&quot; ~ &quot;Household Expenditure&quot;,
-    IndicatorName == &quot;NetExport&quot; ~ &quot;Net Exports&quot;,
-    TRUE ~ as.character(IndicatorName)))
-
-plot &lt;- wide_GDP_data2 %&gt;%
-  ggplot(aes(x=Year, y=Proportion)) +
-  geom_line(aes(colour=IndicatorName)) +
-  facet_wrap(~Country) +
-  theme_bw() +
-  theme(legend.title=element_blank()) +
-  labs(x=&quot;&quot;,
-       y=&quot;proportion&quot;,
-       title=&quot;GDP and its breakdown at constant 2010 prices in US Dollars&quot;,
-       caption=&quot;Source: United Nations, https://unstats.un.org/unsd/snaama/Downloads&quot;) +
-  NULL
-
-ggsave(file=&#39;gdp2_plot.png&#39;, plot=plot, width=8, height=5)
-knitr::include_graphics(&quot;gdp2_plot.png&quot;, error=F)</code></pre>
-<p><img src="gdp2_plot.png" width="1200" style="display: block; margin: auto;" /></p>
-<blockquote>
-<p>Answer below</p>
-</blockquote>
-<p>Attached below is the column for GDP percentage change (each country and year). This has been calculated by first finding the GDP manually (sum of household expenditure, government expenditure, gross capital formation, and net exports) and then taking the percentage difference from the GDP provided in the dataframe.</p>
-<pre class="r"><code>GDPdiff&lt;- wide_GDP_data %&gt;%
-  select(GDPDifferencePct, Country, Year)
-GDPdiff</code></pre>
-<pre><code>## # A tibble: 144 x 3
-##    GDPDifferencePct Country  Year
-##               &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
-##  1             3.03 Germany  1970
-##  2             3.54 Germany  1971
-##  3             3.56 Germany  1972
-##  4             2.92 Germany  1973
-##  5             1.78 Germany  1974
-##  6             2.93 Germany  1975
-##  7             2.83 Germany  1976
-##  8             2.77 Germany  1977
-##  9             3.05 Germany  1978
-## 10             3.44 Germany  1979
-## # … with 134 more rows</code></pre>
-</div>
+<p>```</p>
 </div>
 <div id="deliverables" class="section level1">
 <h1>Deliverables</h1>

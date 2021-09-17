@@ -1,0 +1,41 @@
+---
+categories:
+- ""
+- ""
+date: "2017-10-31T22:42:51-05:00"
+description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
+  sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa
+  sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
+  consequat tincidunt. Vivamus et sagittis tempus.
+draft: false
+image: pic07.jpg
+keywords: ""
+slug: purva
+title: Purva
+---
+
+# Introduction
+
+
+> <img src="https://www.interfolio.com/wp-content/uploads/London_Business_School_Logo.png" width="150">  
+>
+>I Purva Sikri, am an incoming student for **Master's in Analytics and Management** at **London Business School**. 
+
+### Business Experience
+>    1. Intern at Mastertrust Consulting. 
+>    2. Research Assistant at O.P. Jindal Global University.
+>    3. Intern at O.P. Garg and Co.
+
+### Certifications
+>    1. KPMG trained accounting professional.
+>    2. Certified Management Accountant.
+>    3. Financial inclusion and development by IMF.
+>    4. GESE from Trinity College London.
+
+### Awards
+>    1. Graduate research scholarship for best research work.
+>    2. Dean's List for 3 consecuttive years.
+>    3. Best overall performer.
+
+> Further Information can be found on my [LinkedIn](https://www.linkedin.com/in/purvasikriconsulting/)
+
