@@ -5,6 +5,7 @@ categories:
 date: "2017-10-31T21:28:43-05:00"
 description: ""
 draft: false
+image: Rdat2.png
 keywords: ""
 slug: rti1
 title: Dplyr, tidyverse, ggplot, and t-test (using bootstrap).
@@ -17,20 +18,24 @@ title: Dplyr, tidyverse, ggplot, and t-test (using bootstrap).
 <div id="setting-up-the-markdown-file-to-auto-filter-the-data-and-plots" class="section level3">
 <h3>Setting up the markdown file to auto filter the data and plots</h3>
 </div>
-<div id="climate-change-and-temperature-anomalies" class="section level1">
-<h1>Climate change and temperature anomalies</h1>
-<div id="loading-the-data" class="section level2">
-<h2>Loading the data</h2>
+<div id="loading-the-necessary-libraries" class="section level3">
+<h3>Loading the necessary libraries</h3>
+</div>
+<div id="ananlysis-1-on-climate-change-and-temperature-anomalies" class="section level1">
+<h1>Ananlysis 1 on Climate change and temperature anomalies</h1>
+<div id="loading-the-data" class="section level3">
+<h3>Loading the data</h3>
 <pre class="r"><code>weather &lt;- 
   read_csv(&quot;https://data.giss.nasa.gov/gistemp/tabledata_v4/NH.Ts+dSST.csv&quot;, 
            skip = 1, 
            na = &quot;***&quot;)</code></pre>
 </div>
-<div id="tidying-the-data-using-select-and-pivot_longer" class="section level2">
-<h2>Tidying the data using select() and pivot_longer()</h2>
+<div id="tidying-the-data" class="section level3">
+<h3>Tidying the data</h3>
 <pre class="r"><code>tidyweather &lt;- weather %&gt;%
   select(1:13) %&gt;% #Selecting Year and month variables
   pivot_longer(cols=2:13, names_to=&#39;month&#39;, values_to=&#39;delta&#39;) #Tidying the data from wide to long format so that we have a column for the months and the corresponding temperature data respectively</code></pre>
+</div>
 <div id="checking-for-year-month-and-delta-columns-in-the-tidyweather-dataframe" class="section level3">
 <h3>Checking for year, month, and delta columns in the tidyweather dataframe</h3>
 <pre class="r"><code>skim(tidyweather)</code></pre>
@@ -149,9 +154,8 @@ title: Dplyr, tidyverse, ggplot, and t-test (using bootstrap).
 </tbody>
 </table>
 </div>
-</div>
-<div id="plotting-information" class="section level2">
-<h2>Plotting Information</h2>
+<div id="plotting-information" class="section level3">
+<h3>Plotting Information</h3>
 <pre class="r"><code>#Creating date variables for the tidyweather dataset
 tidyweather &lt;- tidyweather %&gt;% 
   mutate(date = ymd(paste(as.character(Year), month, &quot;1&quot;)), #Creating a column called date 
@@ -170,8 +174,9 @@ ggplot(tidyweather, aes(x=date, y = delta))+  #Plotting delta by date
   ) +
   NULL</code></pre>
 <p><img src="/blogs/homework2_files/figure-html/scatter_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
-<div id="scatterplot-for-each-month-using-facet_wrap" class="section level3">
-<h3>Scatterplot for each month using facet_wrap()</h3>
+</div>
+<div id="scatterplot-for-each-month" class="section level3">
+<h3>Scatterplot for each month</h3>
 <pre class="r"><code>tidyweather %&gt;%
   ggplot(aes(x=Year, y=delta)) + #Plotting delta by Year
   geom_point() + #Scatterplot
@@ -186,7 +191,7 @@ ggplot(tidyweather, aes(x=date, y = delta))+  #Plotting delta by date
   NULL</code></pre>
 <p><img src="/blogs/homework2_files/figure-html/facet_wrap-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
-<p>Answer below</p>
+<p>AInference 1:</p>
 </blockquote>
 <p>Although all of the graphs in the grid have a similar upwards trend, there are subtle differences in variability between months such as December/January and June/July. January is a month with much higher variability in weather while June does not. This is something that may be worth looking into for meteorologists.</p>
 </div>
@@ -232,15 +237,11 @@ ggplot(average_annual_anomaly, aes(x=Year, y=annual_average_delta))+
   ) +
   NULL</code></pre>
 <p><img src="/blogs/homework2_files/figure-html/averaging-1.png" width="648" style="display: block; margin: auto;" /></p>
-</div>
-</div>
-<div id="confidence-interval-for-delta" class="section level2">
-<h2>Confidence Interval for <code>delta</code></h2>
-<p><a href="https://earthobservatory.nasa.gov/world-of-change/decadaltemp.php">NASA points out on their website</a> that</p>
 <blockquote>
-<p>A one-degree global change is significant because it takes a vast amount of heat to warm all the oceans, atmosphere, and land by that much. In the past, a one- to two-degree drop was all it took to plunge the Earth into the Little Ice Age.</p>
+<p>Inference 2:</p>
 </blockquote>
-<p>Your task is to construct a confidence interval for the average annual delta since 2011, both using a formula and using a bootstrap simulation with the <code>infer</code> package. Recall that the dataframe <code>comparison</code> has already grouped temperature anomalies according to time intervals; we are only interested in what is happening between 2011-present.</p>
+<p>A one-degree global change is significant because it takes a vast amount of heat to warm all the oceans, atmosphere, and land by that much. In the past, a one- to two-degree drop was all it took to plunge the Earth into the Little Ice Age.</p>
+</div>
 <div id="confidence-interval-for-the-average-annual-delta-since-2011" class="section level3">
 <h3>Confidence interval for the average annual delta since 2011</h3>
 <pre class="r"><code>formula_ci &lt;- comparison %&gt;% 
@@ -279,14 +280,13 @@ boot_ci</code></pre>
 ##      &lt;dbl&gt;    &lt;dbl&gt;
 ## 1     1.01     1.11</code></pre>
 <blockquote>
-<p>Answer below</p>
+<p>Inference 3:</p>
 </blockquote>
 <p>We construct a 95% confidence interval both using the formula and a bootstrap simulation. The result shows that the true mean lies within the interval calculated with 95% confidence. The fact that this confidence interval does not contain zero shows that the difference between the means is statistically significant. Hence, using our result, we can conclude that the increase in temprature is statistically significant and that global warming is progressing.</p>
 </div>
 </div>
-</div>
-<div id="bidens-approval-margins" class="section level1">
-<h1>Biden’s Approval Margins</h1>
+<div id="analysis-2-on-bidens-approval-margins" class="section level1">
+<h1>Analysis 2 on Biden’s Approval Margins</h1>
 <pre class="r"><code># Import approval polls data directly off fivethirtyeight website
 approval_polllist &lt;- read_csv(&#39;https://projects.fivethirtyeight.com/biden-approval-data/approval_polllist.csv&#39;) 
 glimpse(approval_polllist)</code></pre>
@@ -383,19 +383,16 @@ glimpse(approval_polllist)</code></pre>
 ggsave(file=&#39;biden_plot.png&#39;, plot=plot, width=12, height=8) #Saving to adjust image width
 knitr::include_graphics(&quot;biden_plot.png&quot;, error=F)</code></pre>
 <p><img src="biden_plot.png" width="1800" style="display: block; margin: auto;" /></p>
-</div>
-<div id="compare-confidence-intervals" class="section level2">
-<h2>Compare Confidence Intervals</h2>
 <blockquote>
-<p>Answer below</p>
+<p>Inference 4:</p>
 </blockquote>
 <p>The confidence interval for ‘week 4’ ranges from 9.14 to 19.6828 with a mean of 14.41 and standard deviation of 10.25, while ‘week 25’ ranges from 10.30 to 12.7523 with a mean of 11.53 and a standard deviation of 4.74. This is mainly due to the number of data points. For ‘week 4’ we only have 17 data points to work with, while ‘week 25’ has 60. With a larger set of data to work with, we are able to create narrower intervals with the same level of confidence.</p>
 </div>
 </div>
-<div id="challenge-1-excess-rentals-in-tfl-bike-sharing" class="section level1">
-<h1>Challenge 1: Excess rentals in TfL bike sharing</h1>
-<div id="load-and-clean-the-latest-tfl-data" class="section level3">
-<h3>Load and clean the latest Tfl data</h3>
+<div id="analysis-3-on-excess-rentals-in-tfl-bike-sharing" class="section level1">
+<h1>Analysis 3 on Excess rentals in TfL bike sharing</h1>
+<div id="loading-and-cleaning-the-latest-tfl-data" class="section level3">
+<h3>Loading and cleaning the latest Tfl data</h3>
 <pre class="r"><code>setwd(&#39;/Users/purvasikri/Desktop/my_website/data&#39;)
 url &lt;- &quot;https://data.london.gov.uk/download/number-bicycle-hires/ac29363e-e0cb-47cc-a97a-e216d900a6b0/tfl-daily-cycle-hires.xlsx&quot;
 
@@ -420,8 +417,8 @@ bike &lt;- bike0 %&gt;%
           month = lubridate::month(day, label = TRUE),
           week = isoweek(day))</code></pre>
 </div>
-<div id="graphs." class="section level3">
-<h3>Graphs.</h3>
+<div id="graphs" class="section level3">
+<h3>Graphs</h3>
 <pre class="r"><code># Clean the data 
 bike_exp &lt;- bike %&gt;%
   filter(year &gt; 2015) %&gt;% #Filter all the data that after 2015
@@ -453,7 +450,6 @@ knitr::include_graphics(&quot;bike1_plot.png&quot;, error=F)</code></pre>
 </div>
 <div id="percentage-changes-from-the-expected-level-of-weekly-rentals." class="section level3">
 <h3>Percentage changes from the expected level of weekly rentals.</h3>
-<p>blogdo</p>
 <pre class="r"><code># Clean the data
 bike_exp_week &lt;- bike %&gt;%
   filter(year &gt; 2015) %&gt;%
@@ -489,29 +485,6 @@ plot &lt;- bike %&gt;%
 ggsave(file=&#39;bike2_plot.png&#39;, plot=plot, width=12, height=8) # Create and save the plot
 knitr::include_graphics(&quot;bike2_plot.png&quot;, error=F)</code></pre>
 <p><img src="bike2_plot.png" width="1800" style="display: block; margin: auto;" /></p>
-<p>Should you use the mean or the median to calculate your expected rentals? Why?
-We use the mean to calculate the expected rentals.</p>
+<p>In collaborate with: Lazar Jelic, Valeria Morales, Hanlu Lin, Hao Ni, and Junna Yanai</p>
 </div>
-</div>
-<div id="deliverables" class="section level1">
-<h1>Deliverables</h1>
-<p>As usual, there is a lot of explanatory text, comments, etc. You do not need these, so delete them and produce a stand-alone document that you could share with someone. Knit the edited and completed R Markdown file as an HTML document (use the “Knit” button at the top of the script editor window) and upload it to Canvas.</p>
-</div>
-<div id="details" class="section level1">
-<h1>Details</h1>
-<ul>
-<li>Who did you collaborate with: Lazar Jelic, Valeria Morales, Hanlu Lin, Hao Ni, Purva Sikri, Junna Yanai</li>
-<li>Approximately how much time did you spend on this problem set: 10hrs</li>
-<li>What, if anything, gave you the most trouble: The details in replicating graphs</li>
-</ul>
-<p><strong>Please seek out help when you need it,</strong> and remember the <a href="https://mam202.netlify.app/syllabus/#the-15-minute-rule" target="_blank">15-minute rule</a>. You know enough R (and have enough examples of code from class and your readings) to be able to do this. If you get stuck, ask for help from others, post a question on Slack– and remember that I am here to help too!</p>
-<blockquote>
-<p>As a true test to yourself, do you understand the code you submitted and are you able to explain it to someone else?</p>
-</blockquote>
-</div>
-<div id="rubric" class="section level1">
-<h1>Rubric</h1>
-<p>Check minus (1/5): Displays minimal effort. Doesn’t complete all components. Code is poorly written and not documented. Uses the same type of plot for each graph, or doesn’t use plots appropriate for the variables being analyzed.</p>
-<p>Check (3/5): Solid effort. Hits all the elements. No clear mistakes. Easy to follow (both the code and the output).</p>
-<p>Check plus (5/5): Finished all components of the assignment correctly and addressed both challenges. Code is well-documented (both self-documented and with additional comments as necessary). Used tidyverse, instead of base R. Graphs and tables are properly labelled. Analysis is clear and easy to follow, either because graphs are labeled clearly or you’ve written additional text to describe how you interpret the output.</p>
 </div>
