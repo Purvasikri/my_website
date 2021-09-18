@@ -16,7 +16,7 @@ In an All-India case study competition, we were asked to check for the feasibili
 Attached below is the power point with the analysis and conclusion
 
 ```{r picture, echo=FALSE, out.width="70%"}
-knitr::include_graphics("/img/a.jpg", error = FALSE)
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/a.jpg", error = FALSE)
 knitr::include_graphics("/img/b.jpg", error = FALSE)
 knitr::include_graphics("/img/c.jpg", error = FALSE)
 knitr::include_graphics("/img/d.jpg", error = FALSE)
