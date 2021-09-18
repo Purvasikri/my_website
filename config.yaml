@@ -98,7 +98,7 @@ params:
       - image: data_lasttone.jpg
         subtitle: It's importance to a manager 
         title: Data Analytics 
-        url: blogs/ipsum
+        url: blogs/last
   two:
     buttonText: Get Started
     enable: yes
