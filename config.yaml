@@ -13,7 +13,7 @@ params:
   blog: {}
   contact:
     address:
-      - city: London, NW8 9NY
+      - city: London, NW89NY
         country: United Kingdom.
         street: Halll Road
         title: Address
@@ -54,7 +54,7 @@ params:
   name: Purva Sikri
   navigation:
     button1:
-      - name: Get Started
+      - name: My projects
         url: blogs
     button2:
       - name: Log In
@@ -74,7 +74,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: Hello.jpg
+      - image: Profpic.jpg
         subtitle: A short Introduction
         title: About me
         slug: purva
@@ -92,8 +92,8 @@ params:
         title: Rmarkdown project 
         url: blogs/rti1
       - image: dataA.jpg
-        subtitle: R-studio data analytics
-        title: Recent Projects
+        subtitle: Target banking in India
+        title: Python projects
         url: blogs/ipsum
       - image: data_lasttone.jpg
         subtitle: It's importance to a manager 
