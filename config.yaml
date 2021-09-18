@@ -94,7 +94,7 @@ params:
       - image: IMPnew.png
         subtitle: Target banking in India
         title: Python projects
-        url: blogs/ipsum
+        url: blogs/python
       - image: IBM.png
         subtitle: A simulation for IBM and Maersk 
         title: Cost-benefit analysis of blockchain 
