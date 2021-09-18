@@ -8,36 +8,36 @@ draft: false
 image: pic07.jpg
 keywords: ""
 slug: purva
-title: Purva
+title: Purva Sikri 
 ---
 
 ---
+
 # Introduction
 
+<img src="https://www.interfolio.com/wp-content/uploads/London_Business_School_Logo.png" width="150">  
 
-> <img src="https://www.interfolio.com/wp-content/uploads/London_Business_School_Logo.png" width="150">  
->
->I Purva Sikri, am an incoming student for **Master's in Analytics and Management** at **London Business School**. 
+I Purva Sikri, am an incoming student for **Master's in Analytics and Management** at **London Business School**. 
 
 ### Business Experience
->    1. Intern at Mastertrust Consulting. 
->    2. Research Assistant at O.P. Jindal Global University.
->    3. Intern at O.P. Garg and Co.
->    4. Social intenships - Amrit Indo Canadian and State government (Punjab). 
+    1. Intern at Mastertrust Consulting. 
+    2. Research Assistant at O.P. Jindal Global University.
+    3. Intern at O.P. Garg and Co.
+    4. Social intenships - Amrit Indo Canadian and State government (Punjab). 
 
 ### Certifications
->    1. CFA Level 2 candidate
->    2. KPMG trained accounting professional.
->    3. Certified Management Accountant.
->    4. Financial inclusion and development by IMF.
->    5. GESE from Trinity College London.
+    1. CFA Level 2 candidate
+    2. KPMG trained accounting professional.
+    3. Certified Management Accountant.
+    4. Financial inclusion and development by IMF.
+    5. GESE from Trinity College London.
 
 ### Awards
->    1. Graduate research scholarship for best research work.
->    2. Dean's List for 3 consecutive years.
->    3. Best overall performer.
-
-> Further Information can be found on my [LinkedIn](https://www.linkedin.com/in/purvasikriconsulting/)
+    1. Graduate research scholarship for best research work.
+    2. Dean's List for 3 consecutive years.
+    3. Best overall performer.
+    
+Further Information can be found on my [LinkedIn](https://www.linkedin.com/in/purvasikriconsulting/)
 
 
 ### Importance of analytics in my life 
