@@ -16,17 +16,49 @@ In an All-India case study competition, we were asked to check for the feasibili
 Attached below is the power point with the analysis and conclusion
 
 ```{r picture, echo=FALSE, out.width="70%"}
-knitr::include_graphics("/img/a.jpg", error = FALSE)
-knitr::include_graphics("/img/b.jpg", error = FALSE)
-knitr::include_graphics("/img/c.jpg", error = FALSE)
-knitr::include_graphics("/img/d.jpg", error = FALSE)
-knitr::include_graphics("/img/e.jpg", error = FALSE)
-knitr::include_graphics("/img/f.jpg", error = FALSE)
-knitr::include_graphics("/img/g.jpg", error = FALSE)
-knitr::include_graphics("/img/h.jpg", error = FALSE)
-knitr::include_graphics("/img/i.jpg", error = FALSE)
-knitr::include_graphics("/img/j.jpg", error = FALSE)
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/a1.jpg", error = FALSE)
+```
 
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/b2.jpg", error = FALSE)
+```
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/c3.jpg", error = FALSE)
+```
 
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/d4.jpg", error = FALSE)
+```
+
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/e5.jpg", error = FALSE)
+```
+
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/f6.jpg", error = FALSE)
+```
+
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/g7.jpg", error = FALSE)
+```
+
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/h8.jpg", error = FALSE)
+```
+
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/i9.jpg", error = FALSE)
+```
+
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/j10.jpg", error = FALSE)
+```
+
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/k11.jpg", error = FALSE)
+```
+
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/l12.jpg", error = FALSE)
 ```
 
