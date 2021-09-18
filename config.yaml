@@ -79,31 +79,31 @@ params:
         title: About me
         slug: purva
         url: blogs/purva
-      - image: Bitcoin.jpg
+      - image: ggplot2.png
         subtitle: Data analysis
         title: R-studio data analytics
         url: blogs/blockchain
-      - image: Research.jpg
+      - image: paraRTI.png
         subtitle: Cognitive capture and Right to information 
         title: Research papers - Financial and Social
         url: blogs/magna
-      - image: RTI.jpg
+      - image: blog_4pic.png
         subtitle: Tidyverse, dplyr, ggplot, and t-test (using bootstrap).
         title: Rmarkdown project 
         url: blogs/rti1
-      - image: dataA.jpg
+      - image: IMPnew.png
         subtitle: Target banking in India
         title: Python projects
         url: blogs/ipsum
-      - image: data_lasttone.jpg
-        subtitle: It's importance to a manager 
-        title: Data Analytics 
+      - image: IBM.png
+        subtitle: A simulation for IBM and Maersk 
+        title: Cost-benefit analysis of blockchain 
         url: blogs/last
   two:
-    buttonText: Get Started
+    buttonText: Blog description 
     enable: yes
-    subtitle: "Hello"
-    title: Massa lbero
+    subtitle: ""
+    title: Thank you
     url: blogs
     
 
