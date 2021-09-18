@@ -16,16 +16,16 @@ In an All-India case study competition, we were asked to check for the feasibili
 Attached below is the power point with the analysis and conclusion
 
 ```{r picture, echo=FALSE, out.width="70%"}
-knitr::include_graphics("/img/1.png", error = FALSE)
-knitr::include_graphics("/img/2.png", error = FALSE)
-knitr::include_graphics("/img/3.png", error = FALSE)
-knitr::include_graphics("/img/4.png", error = FALSE)
-knitr::include_graphics("/img/5.png", error = FALSE)
-knitr::include_graphics("/img/6.png", error = FALSE)
-knitr::include_graphics("/img/7.png", error = FALSE)
-knitr::include_graphics("/img/8.png", error = FALSE)
-knitr::include_graphics("/img/9.png", error = FALSE)
-knitr::include_graphics("/img/10.png", error = FALSE)
+knitr::include_graphics("/img/a.jpg", error = FALSE)
+knitr::include_graphics("/img/b.jpg", error = FALSE)
+knitr::include_graphics("/img/c.jpg", error = FALSE)
+knitr::include_graphics("/img/d.jpg", error = FALSE)
+knitr::include_graphics("/img/e.jpg", error = FALSE)
+knitr::include_graphics("/img/f.jpg", error = FALSE)
+knitr::include_graphics("/img/g.jpg", error = FALSE)
+knitr::include_graphics("/img/h.jpg", error = FALSE)
+knitr::include_graphics("/img/i.jpg", error = FALSE)
+knitr::include_graphics("/img/j.jpg", error = FALSE)
 
 ```
 
