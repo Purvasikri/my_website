@@ -406,8 +406,9 @@ plot <- brexit %>%
     y = "Leave % in the 2016 Brexit referendum") +
   NULL
 
-ggsave(file='brexit_plot.png', plot=plot, width=14, height=8)
-knitr::include_graphics("brexit_plot.png", error=F)
+plot
+#ggsave(file='brexit_plot.png', plot=plot, width=14, height=8)
+#knitr::include_graphics("brexit_plot.png", error=F)
 ```
 
 

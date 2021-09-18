@@ -9,7 +9,7 @@ params:
     subtitle: |-
       WEBSITE DESIGNED 
       AND RELEASED BY PURVA SIKRI.
-    title: Hi, my name is Purva Sikri
+    title: Portfolio website by Purva Sikri
   blog: {}
   contact:
     address:
@@ -28,7 +28,7 @@ params:
         title: Phone
   custom_css: []
   custom_js: []
-  description: Your desc
+  description: With knowledge of softwares like R-Studio, Python, SQL, and Tableau, I am also a CMA, CFA second level candidate, and KPMG certified accountant. Further, my hobbies subsume athletics (), swimming, and travelling.   
   error404:
     heading: Page couldn't be found
     text: Please visit [this page](/)
@@ -41,12 +41,6 @@ params:
         text: 'Design: '
         url: https://www.html5up.net
     social:
-      - icon: fa-twitter
-        label: Twitter
-        url: https://www.twitter.com
-      - icon: fa-facebook
-        label: Facebook
-        url: https://www.facebook.com
       - icon: fa-instagram
         label: Instagram
         url: https://www.instagram.com/purvasikri
