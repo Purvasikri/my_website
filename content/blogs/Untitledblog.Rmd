@@ -11,6 +11,7 @@ slug: purva
 title: Purva
 ---
 
+---
 # Introduction
 
 
@@ -38,13 +39,14 @@ title: Purva
 
 > Further Information can be found on my [LinkedIn](https://www.linkedin.com/in/purvasikriconsulting/)
 
-## Importance of analytics in my life 
+
+### Importance of analytics in my life 
 
 For as long as I can remember, my professional raison d’être has been crystal clear. The vision of a financially inclusive and developed world has driven the majority of my decisions- in turn, I wish to represent the world’s underprivileged in this exigent fight towards equal accessibility of financial services. Although my path to this goal is not set in stone and continues to meliorate, but the end goal certainly is unalterable.  
 Albeit the constantly metamorphosing world, my immediate plan of action is to increase my domain knowledge of analytics, finance, and management. Further gaining some experience at Financial Conduct Authority or Financial Reporting Council, London, expectantly succeeded by working at World Bank, IMF, or International Finance corporation towards a “financially inclusive world” in the truest sense. Additionally, I understand that this plain is not immune to change and will need perpetual upgradation. 
 In accordance with the multifarious skills required, the rudimental ones are data analytics (to gauge the quality of existing and prospective policies), financial policymaking, management, and leadership potential. Therefore, I am have tried to gain apposite financial and analytical skills through an undergraduate specialization in finance and integrated program in business analytics. Nonetheless, acknowledging the clout of management in representing cities, states, and countries as well as the lack of a “specific theoretical foundation/education” in management, I wish to further hone my managerial and leadership skills along with advancing the subsisting analytical skills by completing my "Masters in analytics and management" at London Business School. 
 
-## Thoughts on Personal culture 
+### Thoughts on Personal culture 
 
 Religion, values, beliefs, circumstances, and the culture of acquaintances are a few elements that compose and provide buttress to our/my “Personal” culture. At variance with the culture of India, neither my religion (Sikhism) nor my parents levied any form of practice or convention upon me. All that I believe and follow has been up to my discretion (however, established either by the religious texts my grandmother read or mimicked from my parent’s lifestyle).
 Unlike most others, the predominant source of my culture is my boarding school (rather than my lineage). From starting school as a precarious 9-year-old to graduating as an individual with staunch beliefs and values. The stern routine and stringent rules molded me into what I believe is a disciplined person, who is true to the dogmas my school represents. Each custom followed, such as assemblies, flag hoisting, marching, NCC, soldier salute assemblies, peace steads, memorial and chapel service amongst many others have been embedded in my heart. My rudimentary learning from the vigorous sports routine was the sportsman spirit to deal with all highs and lows of life. Furthermore, the once enforced rules have now become my customary values. Involving waking up early, praying, exercising, picking up wrappers from the road, greeting every elder that crosses, unabating respect for our soldiers (being the oldest school India; built by the British, we constantly learned of the lives it took for us to now enjoy a free India), and most of all being independent in all aspects. Candidly, as not all is rosy, the negative values I caught up on by living with a large number of people are indifference, lack of trust and like any other boarder thick skin towards bullying.
@@ -52,4 +54,4 @@ As with others, another source of my culture is my friends. Having been surround
 Since my religion mandates no specific sacrifice or code of conduct (the type of food to be consumed, frequency in visiting a temple, style of clothing, etc), I learned to live life by the rules that my parents had clearly demarcated for themselves (like visiting the gurudwara at least once a month, praying before every meal, bedtime by 11, no swearing in the house, cleaning 2 times a day and most importantly washing your own bathrooms and utensils) and soon these rules turned to my values. Furthermore, my parents strive for professional success and in forth giving back to the society in forms of social work and charity taught me not only to be dedicated and career-centric but also not to do so at the cost of others.
 In an era of globalisation, access to other miscellaneous sources such as social media may have helped break down the myriad of beliefs, practices, values, and traditions in order to mould my “Personal” culture (How I perceive, handle situations, and live my life on a daily basis). However, mentioned above is not near an exhaustive list of the things I believe and follow, because my culture as a Sikh, Indian, or more importantly as a human is still evolving(temporal) and trying to feature in every possible way to make the world a better place for everyone.
 Lastly, my culture, righty classified as an “iceberg”, includes a myriad of practices and beliefs that cannot be stated in such few words. Yet, what I can most concisely and definitely say is that mine as well as the Indian culture roots from the basic etiquettes and respect that every being deserves.
- 
+
