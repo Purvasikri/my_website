@@ -97,7 +97,7 @@ params:
       - image: IBM.png
         subtitle: A simulation for IBM and Maersk 
         title: Cost-benefit analysis of blockchain 
-        url: blogs/last
+        url: blogs/last1
   two:
     buttonText: Blog description 
     enable: yes

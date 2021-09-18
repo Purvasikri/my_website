@@ -7,58 +7,27 @@ description: In an All-India case study competition, we were asked to check for 
 draft: false
 image: personalbit.png
 keywords: ""
-slug: last
+slug: last1
 title: Testing for feasibility of blockchian for logistic companies 
 ---
 
-In an All-India case study competition, we were asked to check for the feasibility (via cost-benefit analysis) of block chain   in any industry of choice. Therefore, after choosing the logistic sector (as it needs the most amount of coordination), the research was narrowed down to IBM and Maersk. Post performing the analysis, it was concluded that since the cost will decrease by USD 16 billion and the revenue will increase by USD 42 billion in the coming seven years (the initial investment being USD 1.34 billion), block chain can be applied. 
+In an All-India case study competition, we were asked to check for the feasibility (via cost-benefit analysis) of block chain   in any industry of choice. Therefore, after choosing the logistic sector (as it needs the most amount of coordination), the research was narrowed down to IBM and Maersk. Post performing the analysis, it was concluded that since the cost will decrease by USD 16 billion and the revenue will increase by USD 42 billion in the coming seven years (the initial investment being USD 1.34 billion), blockchain can be applied. 
 
 Attached below is the power point with the analysis and conclusion
-
-```{r picture, echo=FALSE, out.width="70%"}
+```{r picture, echo=FALSE, eval=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/a1.jpg", error = FALSE)
-```
-
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/b2.jpg", error = FALSE)
-```
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/c3.jpg", error = FALSE)
-```
-
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/d4.jpg", error = FALSE)
-```
-
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/e5.jpg", error = FALSE)
-```
-
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/f6.jpg", error = FALSE)
-```
-
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/g7.jpg", error = FALSE)
-```
-
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/h8.jpg", error = FALSE)
-```
-
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/i9.jpg", error = FALSE)
-```
-
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/j10.jpg", error = FALSE)
-```
-
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/k11.jpg", error = FALSE)
-```
-
-```{r picture, echo=FALSE, out.width="70%"}
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/l12.jpg", error = FALSE)
 ```
+
+
 
