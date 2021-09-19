@@ -88,7 +88,7 @@ params:
         url: blogs/magna
       - image: blog_4pic.png
         subtitle: Tidyverse, dplyr, ggplot, and t-test (using bootstrap).
-        title: Rmarkdown project 
+        title: Rmarkdown projects 
         url: blogs/rti1
       - image: IMPnew.png
         subtitle: Target banking in India
