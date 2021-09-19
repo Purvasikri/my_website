@@ -13,12 +13,6 @@ title: Research papers and Articles
 
 *Research Paper 1:* 
 
-```{r 1, echo=FALSE, out.width="70%"}
-
-knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/RTIpaper.png", error = FALSE)
-
-```
-
 
 This paper titled **"Impact of COVID-19 on RTI, a comparative perspective from India to EU"** delineates the wringing of Right to Information during the COVID-19 pandemic. It delves into the political, social, and economic situation of India and the EU to understand why information asymmetry was so rampant and whether the media was captured by the government (out of fear or bribery) or were the polices such that RTI was given a much lower stance and constantly left behind.  
 
@@ -28,11 +22,6 @@ The full research paper is available for view and download here [RTI during COVI
 
 *Research Paper 2:*
 
-```{r 2, echo=FALSE, out.width="70%"}
-
-knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/cog1.jpg", error = FALSE)
-
-```
 
 While the Media agencies, Financial sector, and State agencies are captured - is the general public even getting the right information? the paper titled **"Cognitive capture: a euphemism for malfeasance?"** explains what capture means, its types, and how any form of it (financial, media, or state) are detrimental to any country. 
 
