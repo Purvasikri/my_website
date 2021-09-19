@@ -76,7 +76,7 @@ params:
       - image: picblog.png
         subtitle: A short Introduction
         title: About me
-        slug: purva1
+        slug: purva
         url: blogs/purva
       - image: ggplot2.png
         subtitle: Data analysis
