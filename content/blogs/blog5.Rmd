@@ -29,5 +29,9 @@ knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/k
 knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/l12.jpg", error = FALSE)
 ```
 
+```{r, out.width="0.3\\linewidth", include=TRUE, fig.align="center", fig.cap=c("your caption"), echo=FALSE}
+knitr::include_graphics("/Users/purvasikri/Desktop/my_website/static/img/blogs/1.pdf")
+```
+
 
 
