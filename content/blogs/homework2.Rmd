@@ -15,7 +15,7 @@ After cleaning and performing an exploratory data analysis on multiple data sets
 
 
 
-#### Setting up the markdown file to auto filter the data and plots
+#### Setting up the file to auto filter the data and plots
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(
   message = FALSE, 
