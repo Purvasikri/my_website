@@ -39,11 +39,11 @@ I Purva Sikri, am currently reading **Master's in Analytics and Management** at 
     
 **Few of my bridal designs are:**
 
-```{r, echo = F, out.width="50%"}
+```{r, echo = F, out.width="40%"}
 knitr::include_graphics("/img/blogs/jd1.jpg", error = FALSE)
 ```
 
-```{r, echo = F, out.width="50%"}
+```{r, echo = F, out.width="40%"}
 knitr::include_graphics("/img/blogs/jd2.jpg", error = FALSE)
 ```
 
