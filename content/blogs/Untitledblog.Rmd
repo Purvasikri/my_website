@@ -6,7 +6,7 @@ date: "2017-10-31T22:42:51-05:00"
 description: Belonging to a beautiful and diverse country - India, growing up in a boarding school and being out of my comfort zone form the age of eight - I have never been averse to risk. From trying my hand at engineering to humanities, I found my raison d'etre upon my tryst with finance and statistics. Therefore, in order to fullfil my personal and professional goals in the field of financial analytics, I have gained rudimentary knowledge in the field of finanace, statistics, business analytics, and management (as seen in my reaesrch and analytics blogs) and wish to practically apply it in my workspace. 
   Note - attached above is the picture of Taj Mahal (India); one of the seven wonders of the world).
 draft: false
-image: "TM.png"
+image: "Finpic.png"
 keywords: ""
 slug: purva
 title: Purva
