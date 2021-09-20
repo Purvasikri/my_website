@@ -10,3 +10,5 @@ keywords: ""
 slug: python
 title: Using target banking to find new saving account holders
 ---
+
+Please find attached a PDF of the Python codes, their output, final model, and other results in the main blog menu (inside the block - target banking in India). 
