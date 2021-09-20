@@ -1,6 +1,6 @@
 baseURL: https://purvasikri.netlify.app/
 languageCode: en-us
-title: Portfolio website by Purva
+title: Portfolio website by Purva Sikri
 theme: forty
 googleAnalytics: ''
 params:
@@ -8,7 +8,7 @@ params:
     buttonText: Get Started
     subtitle: |-
       A GLIMPSE OF SELECTED ANALYTICAL PROBLEMS SOLVED BY PURVA SIKRI.
-    title: Research and Analytics with Purva Sikri
+    title: Research and Analytics with Purva 
   blog: {}
   contact:
     address:
