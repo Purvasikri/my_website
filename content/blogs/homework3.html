@@ -14,8 +14,8 @@ title: EDA and data analysis
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<div id="setting-up-r-to-a-default-text-and-figure-type" class="section level3">
-<h3>Setting up R to a default text and figure type</h3>
+<div id="setting-up-r-to-a-default-text-and-figure-type" class="section level4">
+<h4>Setting up R to a default text and figure type</h4>
 <pre class="r"><code>knitr::opts_chunk$set(
   message = FALSE, 
   warning = FALSE, 
@@ -30,8 +30,8 @@ knitr::opts_chunk$set(
   fig.align = &quot;center&quot;
 )</code></pre>
 </div>
-<div id="loading-all-the-necessary-packages" class="section level3">
-<h3>Loading all the necessary packages</h3>
+<div id="loading-all-the-necessary-packages" class="section level4">
+<h4>Loading all the necessary packages</h4>
 <pre class="r"><code>library(tidyverse)
 library(mosaic)
 library(ggthemes)
@@ -292,8 +292,8 @@ glimpse(yrbss) </code></pre>
 </tr>
 </tbody>
 </table>
-<div id="exploratory-data-analysis" class="section level2">
-<h2>Exploratory Data Analysis</h2>
+<div id="exploratory-data-analysis" class="section level4">
+<h4>Exploratory Data Analysis</h4>
 <pre class="r"><code>yrbss_weight &lt;- yrbss %&gt;%
   select(weight) #selecting the weight column and allocating it 
 
@@ -318,8 +318,9 @@ yrbss_weight %&gt;%
   count() %&gt;%
   paste(&#39;missing values&#39;) #tCounting the missing values in weight i.e. 1004 missing values</code></pre>
 <pre><code>## [1] &quot;1004 missing values&quot;</code></pre>
-<div id="summarising-physical-exercise-data" class="section level3">
-<h3>Summarising physical exercise data</h3>
+</div>
+<div id="summarising-physical-exercise-data" class="section level4">
+<h4>Summarising physical exercise data</h4>
 <pre class="r"><code>yrbss &lt;- yrbss %&gt;%
   mutate(physical_3plus=if_else(physically_active_7d &gt;= 3, &#39;yes&#39;, &#39;no&#39;))
 #making a new column titles physical_3plus if the person is active for more than 3 days a week
@@ -345,8 +346,8 @@ yrbss %&gt;%
 ## 1 yes             8906 0.669
 ## 2 no              4404 0.331</code></pre>
 </div>
-<div id="calculating-a-confidence-interval-for-the-population-proportion-of-high-schools-that-are-not-active-3-or-more-days-per-week" class="section level3">
-<h3>Calculating a confidence interval for the population proportion of high schools that are <em>NOT</em> active 3 or more days per week</h3>
+<div id="calculating-a-confidence-interval-for-the-population-proportion-of-high-schools-that-are-not-active-3-or-more-days-per-week" class="section level4">
+<h4>Calculating a confidence interval for the population proportion of high schools that are <em>NOT</em> active 3 or more days per week</h4>
 <pre class="r"><code>yrbss %&gt;%
   filter(!is.na(physical_3plus)) %&gt;% #Removing the N.A.&#39;s 
   count(physical_3plus, sort=T) %&gt;%
@@ -363,8 +364,8 @@ yrbss %&gt;%
 ##   &lt;int&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1  4404 0.00709       1.96 0.317 0.345</code></pre>
 </div>
-<div id="boxplot-of-physical_3plus-vs.-weight" class="section level3">
-<h3>Boxplot of <code>physical_3plus</code> vs. <code>weight</code></h3>
+<div id="boxplot-of-physical_3plus-vs.-weight" class="section level4">
+<h4>Boxplot of <code>physical_3plus</code> vs. <code>weight</code></h4>
 <pre class="r"><code>yrbss %&gt;%
   filter(!is.na(physical_3plus)) %&gt;% #Removing the NA&#39;s  
   ggplot(aes(x=physical_3plus, y=weight)) +
@@ -373,14 +374,13 @@ yrbss %&gt;%
   NULL</code></pre>
 <p><img src="/blogs/homework3_files/figure-html/boxplot-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
-<p>Inference 1</p>
-</blockquote>
-<p>Although, the weights of the people that exercise more or less than 3 days appear to be familiar, there <strong>is a relationship</strong> between the level of physical activity and respective weight. Weight appears to be more clustered for the people that exercise over 3 days and there are evidently more outliers (higher weight) for the people exercising less than 3 days. Therefore, we infer that exercising is helpful in maintaining weight.
+<p>Inference 1
+Although, the weights of the people that exercise more or less than 3 days appear to be familiar, there <strong>is a relationship</strong> between the level of physical activity and respective weight. Weight appears to be more clustered for the people that exercise over 3 days and there are evidently more outliers (higher weight) for the people exercising less than 3 days. Therefore, we infer that exercising is helpful in maintaining weight.
 Nonetheless, it is important to keep in mind that there are some people that do weight training to put on muscle (in tuen increasing weight), weights may not be the best indicator of fitness.</p>
+</blockquote>
 </div>
-</div>
-<div id="calculating-the-confidence-interval" class="section level2">
-<h2>Calculating the confidence Interval</h2>
+<div id="calculating-the-confidence-interval" class="section level4">
+<h4>Calculating the confidence Interval</h4>
 <pre class="r"><code>yrbss %&gt;% 
   filter(!is.na(physical_3plus)) %&gt;% #Removing the NA&#39;s 
   group_by(physical_3plus) %&gt;% #grouping by the people that exercise for more than 3 days
@@ -397,12 +397,14 @@ Nonetheless, it is important to keep in mind that there are some people that do 
 ##   &lt;chr&gt;          &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1 no              66.7  17.6  4404 0.266       1.96  66.2  67.2
 ## 2 yes             68.4  16.5  8906 0.175       1.96  68.1  68.8</code></pre>
+<blockquote>
 <p>There is an observed difference of about 1.77kg (68.44 - 66.67), and we notice that the two confidence intervals do not overlap. It seems that the difference is at least 95% statistically significant. Let us also conduct a hypothesis test.</p>
+</blockquote>
 </div>
 <div id="hypothesis-testing" class="section level2">
 <h2>Hypothesis testing</h2>
-<p><strong>Null:</strong> There is <strong>no difference</strong> in weight means between people who are active more than or less than 3 days per week.</p>
-<p><strong>Alternative:</strong> There is <strong>a difference</strong> in weight means between people who are active more than or less than 3 days per week.</p>
+<p><strong>Null:</strong> There is <strong>no difference</strong> in weight means between people who are active more than or less than 3 days per week.
+<strong>Alternative:</strong> There is <strong>a difference</strong> in weight means between people who are active more than or less than 3 days per week.</p>
 <pre class="r"><code>t.test(weight ~ physical_3plus, data = yrbss) </code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
@@ -416,14 +418,14 @@ Nonetheless, it is important to keep in mind that there are some people that do 
 ##  mean in group no mean in group yes 
 ##              66.7              68.4</code></pre>
 <pre class="r"><code>#Running a t-test to check for the relation between weight and physical activity</code></pre>
-</div>
-<div id="hypothesis-test-with-infer" class="section level2">
-<h2>Hypothesis test with <code>infer</code></h2>
+<div id="hypothesis-test-with-infer" class="section level4">
+<h4>Hypothesis test with <code>infer</code></h4>
 <pre class="r"><code>obs_diff &lt;- yrbss %&gt;% 
   specify(weight ~ physical_3plus) %&gt;%
   calculate(stat = &quot;diff in means&quot;, order = c(&quot;yes&quot;, &quot;no&quot;)) #initialising the test</code></pre>
-<div id="hypothesis-testing-for-difference-in-means-using-bootstrapping" class="section level3">
-<h3>Hypothesis testing for difference in means using bootstrapping</h3>
+</div>
+<div id="hypothesis-testing-for-difference-in-means-using-bootstrapping" class="section level4">
+<h4>Hypothesis testing for difference in means using bootstrapping</h4>
 <pre class="r"><code>null_dist &lt;- yrbss %&gt;%
   # specify variables
   specify(weight ~ physical_3plus) %&gt;%
@@ -437,16 +439,16 @@ Nonetheless, it is important to keep in mind that there are some people that do 
   # calculate statistic of difference, namely &quot;diff in means&quot;
   calculate(stat = &quot;diff in means&quot;, order = c(&quot;yes&quot;, &quot;no&quot;))</code></pre>
 </div>
-<div id="visualizing-this-null-distribution" class="section level3">
-<h3>Visualizing this null distribution</h3>
+<div id="visualizing-this-null-distribution" class="section level4">
+<h4>Visualizing this null distribution</h4>
 <pre class="r"><code>ggplot(data = null_dist, aes(x = stat)) +
   geom_histogram() + #Histogram for the null distribution 
   labs(title=&quot;Histogram for null distribution&quot;, x=&quot;Difference in means&quot;, y=&quot;Count&quot;) +
   NULL</code></pre>
 <p><img src="/blogs/homework3_files/figure-html/unnamed-chunk-3-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
-<div id="calculating-the-p-value-for-your-hypothesis-test-using-the-function-inferget_p_value." class="section level3">
-<h3>Calculating the p-value for your hypothesis test using the function <code>infer::get_p_value()</code>.</h3>
+<div id="calculating-the-p-value-for-your-hypothesis-test-using-the-function-inferget_p_value." class="section level4">
+<h4>Calculating the p-value for your hypothesis test using the function <code>infer::get_p_value()</code>.</h4>
 <pre class="r"><code>null_dist %&gt;% visualize() +
   #visualizing and shading for the p-value of our hypothesis
   shade_p_value(obs_stat = obs_diff, direction = &quot;two-sided&quot;) </code></pre>
@@ -464,15 +466,16 @@ Nonetheless, it is important to keep in mind that there are some people that do 
 <div id="analysis-2-on-imdb-ratings-differences-between-directors" class="section level1">
 <h1>Analysis 2 on IMDB ratings: Differences between directors</h1>
 <blockquote>
-<p>Answer below</p>
+<p><span class="math inline">\(H_0: \mu_a - \mu_b == 0\)</span>
+(HO: mean of Steven Spielberg rating - mean of Tim Burton = 0)
+<span class="math inline">\(H_a: \mu_a - \mu_b != 0\)</span>
+(HA: mean of Steven Spielberg rating - mean of Tim Burton != 0)
+P-value: 0.01
+t-statistic: 3</p>
 </blockquote>
-<p><span class="math inline">\(H_0: \mu_a - \mu_b == 0\)</span></p>
-<p>(HO: mean of Steven Spielberg rating - mean of Tim Burton = 0)</p>
-<p><span class="math inline">\(H_a: \mu_a - \mu_b != 0\)</span></p>
-<p>(HA: mean of Steven Spielberg rating - mean of Tim Burton != 0)</p>
-<p>P-value: 0.01</p>
-<p>t-statistic: 3</p>
+<blockquote>
 <p>Since the t-statistic is greater than 2 and p value is less than 0.05, it means that we can reject the null Hypothesis that the mean ratings for both Steven and Tim are the same.</p>
+</blockquote>
 <pre class="r"><code>movies &lt;- read_csv(here::here(&quot;data&quot;, &quot;movies.csv&quot;))
 glimpse(movies) #exploring the dataset </code></pre>
 <pre><code>## Rows: 2,961
@@ -488,8 +491,8 @@ glimpse(movies) #exploring the dataset </code></pre>
 ## $ votes               &lt;dbl&gt; 886204, 793059, 418214, 995415, 1676169, 534658, 9…
 ## $ reviews             &lt;dbl&gt; 3777, 2843, 1934, 2425, 5312, 3917, 1752, 1752, 35…
 ## $ rating              &lt;dbl&gt; 7.9, 7.7, 7.0, 8.1, 9.0, 6.5, 8.7, 7.5, 8.5, 7.2, …</code></pre>
-<div id="comparing-directors-by-ratings-of-their-movies" class="section level3">
-<h3>Comparing directors by ratings of their movies</h3>
+<div id="comparing-directors-by-ratings-of-their-movies" class="section level4">
+<h4>Comparing directors by ratings of their movies</h4>
 <pre class="r"><code>directors &lt;- c(&#39;Tim Burton&#39;, &#39;Steven Spielberg&#39;)
 
 movies %&gt;%
@@ -537,8 +540,8 @@ movies %&gt;%
 </div>
 <div id="analysis-3-on-omega-group-plc--pay-discrimination" class="section level1">
 <h1>Analysis 3 on Omega Group plc- Pay Discrimination</h1>
-<div id="loading-the-data" class="section level3">
-<h3>Loading the data</h3>
+<div id="loading-the-data" class="section level4">
+<h4>Loading the data</h4>
 <pre class="r"><code>omega &lt;- read_csv(here::here(&quot;data&quot;, &quot;omega.csv&quot;))
 glimpse(omega) #Exploring the omega dataset</code></pre>
 <pre><code>## Rows: 50
@@ -547,8 +550,8 @@ glimpse(omega) #Exploring the omega dataset</code></pre>
 ## $ gender     &lt;chr&gt; &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;ma…
 ## $ experience &lt;dbl&gt; 16, 25, 15, 33, 16, 19, 32, 34, 1, 44, 7, 14, 33, 19, 24, 3…</code></pre>
 </div>
-<div id="relationship-salary---gender" class="section level3">
-<h3>Relationship Salary - Gender ?</h3>
+<div id="relationship-salary---gender" class="section level4">
+<h4>Relationship Salary - Gender ?</h4>
 <pre class="r"><code># Summary Statistics of salary by gender
 mosaic::favstats(salary ~ gender, data=omega)</code></pre>
 <pre><code>##   gender   min    Q1 median    Q3   max  mean   sd  n missing
@@ -573,13 +576,13 @@ omega %&gt;%
 ## 1 female 64543 7567    26 1484       2.06 61486 67599
 ## 2   male 73239 7463    24 1523       2.07 70088 76390</code></pre>
 <blockquote>
-<p>Inference 2</p>
-</blockquote>
-<p>Evidently, the <strong>mean salary for females is lower than that of males</strong>, but the variation for both the gender’s is similar i.e. there is not a huge gap in the salary levels within each gender. Additionally, since the t-critical value is greater than 2, with 95% level of confidence, we can reject our null hypothesis that mean salary of males subtracted from the mean salary of females is zero (it is also worthwhile to notice that the confidence intervals do not overlap).
+<p>Inference 2
+Evidently, the <strong>mean salary for females is lower than that of males</strong>, but the variation for both the gender’s is similar i.e. there is not a huge gap in the salary levels within each gender. Additionally, since the t-critical value is greater than 2, with 95% level of confidence, we can reject our null hypothesis that mean salary of males subtracted from the mean salary of females is zero (it is also worthwhile to notice that the confidence intervals do not overlap).
 You can also run a hypothesis testing, assuming as a null hypothesis that the mean difference in salaries is zero, or that, on average, men and women make the same amount of money. You should tun your hypothesis testing using <code>t.test()</code> and with the simulation method from the <code>infer</code> package.</p>
+</blockquote>
 </div>
-<div id="hypothesis-testing-for-salary-difference-between-genders" class="section level3">
-<h3>Hypothesis testing for salary difference between genders</h3>
+<div id="hypothesis-testing-for-salary-difference-between-genders" class="section level4">
+<h4>Hypothesis testing for salary difference between genders</h4>
 <pre class="r"><code># hypothesis testing using t.test() 
 t.test(salary ~ gender, data=omega)</code></pre>
 <pre><code>## 
@@ -609,12 +612,12 @@ omega %&gt;%
 ##     &lt;dbl&gt;
 ## 1       0</code></pre>
 <blockquote>
-<p>Inference 3:</p>
+<p>Inference 3:
+The p-value from the t-test is 0.0002 and from get_p_value is 0 (which is much lesser than the hurdle of 0.05). Therefore with 95% level of confidence, we can reject the <strong>null hypothesis</strong> that the mean difference in salaries is 0. Further, since this p-value seems improbable, it may be worthwhile to consider if there are floating-point numbers or there has been omission of important data points.</p>
 </blockquote>
-<p>The p-value from the t-test is 0.0002 and from get_p_value is 0 (which is much lesser than the hurdle of 0.05). Therefore with 95% level of confidence, we can reject the <strong>null hypothesis</strong> that the mean difference in salaries is 0. Further, since this p-value seems improbable, it may be worthwhile to consider if there are floating-point numbers or there has been omission of important data points.</p>
 </div>
-<div id="relationship-experience---gender" class="section level2">
-<h2>Relationship Experience - Gender?</h2>
+<div id="relationship-experience---gender" class="section level4">
+<h4>Relationship Experience - Gender?</h4>
 <pre class="r"><code># Summary Statistics of salary by gender
 favstats(experience ~ gender, data=omega)</code></pre>
 <pre><code>##   gender min    Q1 median   Q3 max  mean    sd  n missing
@@ -633,11 +636,12 @@ favstats(experience ~ gender, data=omega)</code></pre>
 ## mean in group female   mean in group male 
 ##                 7.38                21.12</code></pre>
 <blockquote>
-<p>Inference 4:</p>
+<p>Inference 4:
+This p-value below 0.05 suggests that at 95% confidence level we can <strong>reject the null hypothesis</strong> that the mean difference between the work experience of males and females is 0. This finding definately endangers our earlier assumption that the difference in mean salaries of males and females is due to some inherent bias (gender disparity at workplace). However, after this analysis we can say that one of the reasons for lower salaries of females is the lesser work experience as comapred to that of men (a case of correlation not causation).</p>
 </blockquote>
-<p>This p-value below 0.05 suggests that at 95% confidence level we can <strong>reject the null hypothesis</strong> that the mean difference between the work experience of males and females is 0. This finding definately endangers our earlier assumption that the difference in mean salaries of males and females is due to some inherent bias (gender disparity at workplace). However, after this analysis we can say that one of the reasons for lower salaries of females is the lesser work experience as comapred to that of men (a case of correlation not causation).</p>
-<div id="relationship-salary---experience" class="section level3">
-<h3>Relationship Salary - Experience ?</h3>
+</div>
+<div id="relationship-salary---experience" class="section level4">
+<h4>Relationship Salary - Experience ?</h4>
 <pre class="r"><code>#making a scatter plot of the experience and salary of employees
 omega %&gt;%
   ggplot(aes(x=experience, y=salary)) +
@@ -646,8 +650,8 @@ omega %&gt;%
   NULL</code></pre>
 <p><img src="/blogs/homework3_files/figure-html/salary_exp_scatter-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
-<div id="checking-the-correlations-between-the-data" class="section level3">
-<h3>Checking the correlations between the data</h3>
+<div id="checking-the-correlations-between-the-data" class="section level4">
+<h4>Checking the correlations between the data</h4>
 <pre class="r"><code>#creating a correlation matrix to see the relationship between experience and salary seperately for men and women
 omega %&gt;%
   select(gender, experience, salary) %&gt;%
@@ -655,12 +659,11 @@ omega %&gt;%
   theme_bw()</code></pre>
 <p><img src="/blogs/homework3_files/figure-html/ggpairs-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
-<p>Inference 5:</p>
-</blockquote>
-<p>On a closer look, some of the possible inferencs are:
+<p>Inference 5:
+On a closer look, some of the possible inferencs are:
 1. The feamles appear to be at the lower level of jobs (interns, junior managers, etc) whereas the top managament is clustered with male.
 2. Concievably, the correlation between salary and experience is more for the females than males i.e. despite lesser work experience it is possible for males to have higher paying jobs.</p>
-</div>
+</blockquote>
 </div>
 </div>
 <div id="analysis-4-on-the-brexit-data" class="section level1">
@@ -701,8 +704,5 @@ plot &lt;- brexit %&gt;%
 
 plot</code></pre>
 <p><img src="/blogs/homework3_files/figure-html/replicate_brexit_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>#ggsave(file=&#39;brexit_plot.png&#39;, plot=plot, width=14, height=8)
-#knitr::include_graphics(&quot;brexit_plot.png&quot;, error=F)</code></pre>
-<p>```</p>
 <p>In collaboration with Lazar Jelic, Valeria Morales, Hanlu Lin, Hao Ni,and Junna Yanai</p>
 </div>

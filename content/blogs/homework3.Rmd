@@ -12,8 +12,8 @@ title: EDA and data analysis
 ---
 
 
-### Setting up R to a default text and figure type
 
+#### Setting up R to a default text and figure type
 ```{r, setup}
 knitr::opts_chunk$set(
   message = FALSE, 
@@ -30,8 +30,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-### Loading all the necessary packages 
 
+
+#### Loading all the necessary packages 
 ```{r load-libraries}
 library(tidyverse)
 library(mosaic)
@@ -50,9 +51,13 @@ library(dbplyr)
 library(DBI)
 ```
 
+
+
 # Performing an analysis on Youth Risk Behavior Surveillance
 
 Every two years, the Centers for Disease Control and Prevention conduct the [Youth Risk Behavior Surveillance System (YRBSS)](https://www.cdc.gov/healthyyouth/data/yrbs/index.htm) survey, where it takes data from high schoolers (9th through 12th grade), to analyze health patterns. You will work with a selected group of variables from a random sample of observations during one of the years the YRBSS was conducted.
+
+
 
 ```{r}
 data(yrbss)
@@ -60,8 +65,9 @@ glimpse(yrbss)
 skim(yrbss) #To have a look at the descriptive statistics and check for missing values
 ```
 
-## Exploratory Data Analysis
 
+
+#### Exploratory Data Analysis
 ```{r, eda_on_weight}
 yrbss_weight <- yrbss %>%
   select(weight) #selecting the weight column and allocating it 
@@ -81,8 +87,9 @@ yrbss_weight %>%
   paste('missing values') #tCounting the missing values in weight i.e. 1004 missing values
 ```
 
-### Summarising physical exercise data
 
+
+#### Summarising physical exercise data
 ```{r, mutate_and_count}
 yrbss <- yrbss %>%
   mutate(physical_3plus=if_else(physically_active_7d >= 3, 'yes', 'no'))
@@ -101,8 +108,9 @@ yrbss %>%
   mutate(prop=round(n/sum(n), 3)) #getting the number and proportion of people active for more than 3 days
 ```
 
-### Calculating a confidence interval for the population proportion of high schools that are *NOT* active 3 or more days per week
 
+
+#### Calculating a confidence interval for the population proportion of high schools that are *NOT* active 3 or more days per week
 ```{r}
 yrbss %>%
   filter(!is.na(physical_3plus)) %>% #Removing the N.A.'s 
@@ -117,8 +125,9 @@ yrbss %>%
     upper=prop+t_critical*se) #getting the confidence interval (upper and lower CI)
 ```
 
-### Boxplot of `physical_3plus` vs. `weight`
 
+
+#### Boxplot of `physical_3plus` vs. `weight`
 ```{r, boxplot}
 yrbss %>%
   filter(!is.na(physical_3plus)) %>% #Removing the NA's  
@@ -129,12 +138,12 @@ yrbss %>%
 ```
 
 >Inference 1
-
 Although, the weights of the people that exercise more or less than 3 days appear to be familiar, there **is a relationship** between the level of physical activity and respective weight. Weight appears to be more clustered for the people that exercise over 3 days and there are evidently more outliers (higher weight) for the people exercising less than 3 days. Therefore, we infer that exercising is helpful in maintaining weight.
 Nonetheless, it is important to keep in mind that there are some people that do weight training to put on muscle (in tuen increasing weight), weights may not be the best indicator of fitness. 
 
-## Calculating the confidence Interval
 
+
+#### Calculating the confidence Interval
 ```{r, ci_using_formulas}
 yrbss %>% 
   filter(!is.na(physical_3plus)) %>% #Removing the NA's 
@@ -148,22 +157,24 @@ yrbss %>%
     lower=mean-t_critical*se,
     upper=mean+t_critical*se)
 ```
+>There is an observed difference of about 1.77kg (68.44 - 66.67), and we notice that the two confidence intervals do not overlap. It seems that the difference is at least 95% statistically significant. Let us also conduct a hypothesis test.
 
-There is an observed difference of about 1.77kg (68.44 - 66.67), and we notice that the two confidence intervals do not overlap. It seems that the difference is at least 95% statistically significant. Let us also conduct a hypothesis test.
+
 
 ## Hypothesis testing 
-
 **Null:** There is **no difference** in weight means between people who are active more than or less than 3 days per week.
-
 **Alternative:** There is **a difference** in weight means between people who are active more than or less than 3 days per week.
+
+
 
 ```{r, t_test_using_R}
 t.test(weight ~ physical_3plus, data = yrbss) 
 #Running a t-test to check for the relation between weight and physical activity
 ```
 
-## Hypothesis test with `infer`
 
+
+#### Hypothesis test with `infer`
 ```{r, calc_obs_difference}
 obs_diff <- yrbss %>% 
   specify(weight ~ physical_3plus) %>%
@@ -171,8 +182,9 @@ obs_diff <- yrbss %>%
 
 ```
 
-### Hypothesis testing for difference in means using bootstrapping
 
+
+#### Hypothesis testing for difference in means using bootstrapping
 ```{r, hypothesis_testing_using_infer_package}
 
 null_dist <- yrbss %>%
@@ -190,8 +202,9 @@ null_dist <- yrbss %>%
 
 ```
 
-### Visualizing this null distribution
 
+
+#### Visualizing this null distribution
 ```{r}
 ggplot(data = null_dist, aes(x = stat)) +
   geom_histogram() + #Histogram for the null distribution 
@@ -199,8 +212,9 @@ ggplot(data = null_dist, aes(x = stat)) +
   NULL
 ```
 
-### Calculating the p-value for your hypothesis test using the function `infer::get_p_value()`.
 
+
+#### Calculating the p-value for your hypothesis test using the function `infer::get_p_value()`.
 ```{r}
 null_dist %>% visualize() +
   #visualizing and shading for the p-value of our hypothesis
@@ -211,31 +225,30 @@ null_dist %>%
   get_p_value(obs_stat = obs_diff, direction = "two_sided")
 ```
 
+
 # Analysis 2 on IMDB ratings: Differences between directors
 
-> Answer below
 
+> 
 $H_0: \mu_a - \mu_b == 0$
-
 (HO: mean of Steven Spielberg rating - mean of Tim Burton = 0)
-
 $H_a: \mu_a - \mu_b != 0$
-
 (HA: mean of Steven Spielberg rating - mean of Tim Burton != 0)
-
 P-value: 0.01
-
 t-statistic: 3
 
-Since the t-statistic is greater than 2 and p value is less than 0.05, it means that we can reject the null Hypothesis that the mean ratings for both Steven and Tim are the same. 
+>Since the t-statistic is greater than 2 and p value is less than 0.05, it means that we can reject the null Hypothesis that the mean ratings for both Steven and Tim are the same. 
+
+
 
 ```{r load-movies-data}
 movies <- read_csv(here::here("data", "movies.csv"))
 glimpse(movies) #exploring the dataset 
 ```
 
-### Comparing directors by ratings of their movies
 
+
+#### Comparing directors by ratings of their movies
 ```{r}
 directors <- c('Tim Burton', 'Steven Spielberg')
 
@@ -281,17 +294,20 @@ movies %>%
   NULL
 ```
 
+
 # Analysis 3 on Omega Group plc- Pay Discrimination
 
-### Loading the data
 
+
+#### Loading the data
 ```{r load_omega_data}
 omega <- read_csv(here::here("data", "omega.csv"))
 glimpse(omega) #Exploring the omega dataset
 ```
 
-### Relationship Salary - Gender ?
 
+
+#### Relationship Salary - Gender ?
 ```{r, confint_single_valiables}
 # Summary Statistics of salary by gender
 mosaic::favstats(salary ~ gender, data=omega)
@@ -314,12 +330,12 @@ omega %>%
 ```
 
 > Inference 2
-
 Evidently, the **mean salary for females is lower than that of males**, but the variation for both the gender's is similar i.e. there is not a huge gap in the salary levels within each gender. Additionally, since the t-critical value is greater than 2, with 95% level of confidence, we can reject our null hypothesis that mean salary of males subtracted from the mean salary of females is zero (it is also worthwhile to notice that the confidence intervals do not overlap). 
 You can also run a hypothesis testing, assuming as a null hypothesis that the mean difference in salaries is zero, or that, on average, men and women make the same amount of money. You should tun your hypothesis testing using `t.test()` and with the simulation method from the `infer` package.
 
-### Hypothesis testing for salary difference between genders
 
+
+#### Hypothesis testing for salary difference between genders
 ```{r, hypothesis_testing}
 # hypothesis testing using t.test() 
 t.test(salary ~ gender, data=omega)
@@ -338,11 +354,11 @@ omega %>%
 ```
 
 > Inference 3:
-
 The p-value from the t-test is 0.0002 and from get_p_value is 0 (which is much lesser than the hurdle of 0.05). Therefore with 95% level of confidence, we can reject the **null hypothesis** that the mean difference in salaries is 0. Further, since this p-value seems improbable, it may be worthwhile to consider if there are floating-point numbers or there has been omission of important data points. 
 
-## Relationship Experience - Gender?
 
+
+#### Relationship Experience - Gender?
 ```{r, experience_stats}
 # Summary Statistics of salary by gender
 favstats(experience ~ gender, data=omega)
@@ -351,11 +367,11 @@ t.test(experience ~ gender, data=omega)
 ```
 
 > Inference 4:
-
 This p-value below 0.05 suggests that at 95% confidence level we can **reject the null hypothesis** that the mean difference between the work experience of males and females is 0. This finding definately endangers our earlier assumption that the difference in mean salaries of males and females is due to some inherent bias (gender disparity at workplace). However, after this analysis we can say that one of the reasons for lower salaries of females is the lesser work experience as comapred to that of men (a case of correlation not causation).
 
-### Relationship Salary - Experience ?
 
+
+#### Relationship Salary - Experience ?
 ```{r, salary_exp_scatter}
 #making a scatter plot of the experience and salary of employees
 omega %>%
@@ -365,8 +381,9 @@ omega %>%
   NULL
 ```
 
-### Checking the correlations between the data
 
+
+#### Checking the correlations between the data
 ```{r, ggpairs}
 #creating a correlation matrix to see the relationship between experience and salary seperately for men and women
 omega %>%
@@ -376,12 +393,13 @@ omega %>%
 ```
 
 > Inference 5:
-
 On a closer look, some of the possible inferencs are:
 1. The feamles appear to be at the lower level of jobs (interns, junior managers, etc) whereas the top managament is clustered with male.
 2. Concievably, the correlation between salary and experience is more for the females than males i.e. despite lesser work experience it is possible for males to have higher paying jobs.
 
+
 # Analysis 4 on the Brexit data
+
 
 ```{r replicate_brexit_plot}
 brexit <- read_csv(here::here('data', 'brexit_results.csv'))
@@ -407,12 +425,6 @@ plot <- brexit %>%
   NULL
 
 plot
-
-#ggsave(file='brexit_plot.png', plot=plot, width=14, height=8)
-#knitr::include_graphics("brexit_plot.png", error=F)
-```
-
-
 ```
 
 In collaboration with Lazar Jelic, Valeria Morales, Hanlu Lin, Hao Ni,and Junna Yanai
