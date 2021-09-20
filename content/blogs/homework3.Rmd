@@ -3,7 +3,7 @@ categories:
 - ""
 - ""
 date: "2017-10-31T22:26:13-05:00"
-description: ""
+description: In the second group project (assigned at London Business School), multiple tidyverse, hypothesis testing, and ggplot functtions have been used to gauge multiple datasets and present the concievable inferences. Kindly have a look at the blog for codes, graphs, drafted hypothesis, and inferences. 
 draft: false
 image: Rdat.png
 keywords: ""
