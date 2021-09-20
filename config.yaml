@@ -64,7 +64,7 @@ params:
         url: blogs/magna
       - name: R projects
         url: blogs/blockchain
-      - name: Pyhon projects
+      - name: Python projects
         url: blogs/python
     menu: Menu
     #subtitle: By HTML5 Up
