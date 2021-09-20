@@ -67,8 +67,8 @@ params:
       - name: Python projects
         url: blogs/python
     menu: Menu
-    #subtitle: By HTML5 Up
-    #title: 
+    #subtitle: 
+    title: Purva Sikri
   tiles:
     enable: yes
     showcase:
