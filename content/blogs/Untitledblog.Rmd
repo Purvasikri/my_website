@@ -32,6 +32,18 @@ I Purva Sikri, am currently reading **Master's in Analytics and Management** at 
     2. Dean's List for 3 consecutive years.
     3. Best overall performer.
     
+### Hobbies
+    1. Athletics (Punjab state champion in 2020).
+    2. Jewelery designing 
+    
+Few of my designs are:
+```{r, echo = F, out.width="100%"}
+knitr::include_graphics("/img/blogs/Capture.png", error = FALSE)
+```
+
+```{r, echo = F, out.width="100%"}
+knitr::include_graphics("/img/blogs/Capture.png", error = FALSE)
+```
 Further Information can be found on my [LinkedIn](https://www.linkedin.com/in/purvasikriconsulting/)
 
 

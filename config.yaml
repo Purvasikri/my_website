@@ -98,7 +98,7 @@ params:
       - image: IBM2.png
         subtitle: In an All-India case study competition, we created a simulation for IBM and Maersk; Tradelens and performed a cost-benefit analysis to see whether it should adopt blockchain for operations.
         title: Cost-benefit analysis of blockchain for logistic companies.  
-        url: https://drive.google.com/file/d/1EERD8I1ggbvxTW4CCI_YMs6oz4iPmD2C/view?usp=sharing
+        url: blogs/last1
   two:
     buttonText: Blog description 
     enable: yes
