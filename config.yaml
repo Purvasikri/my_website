@@ -7,9 +7,8 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      WEBSITE DESIGNED 
-      AND RELEASED BY PURVA SIKRI.
-    title: Portfolio website by Purva Sikri
+      A GLIMPSE OF SELECTED ANALYTICAL PROBLEMS SOLVED BY PURVA SIKRI.
+    title: Research and Analytics with Purva Sikri
   blog: {}
   contact:
     address:
@@ -79,24 +78,26 @@ params:
         slug: purva
         url: blogs/purva
       - image: lbs.png
-        subtitle: A university group project (ggplot, t-test, and hypothesis testing)
+        subtitle: A university group project (ggplot, t-test, and hypothesis testing).
         title: R-studio data analytics
         url: blogs/blockchain
       - image: rti2.png
-        subtitle: 1. Cognitive capture 2. Right to information
-        title: Published research papers - Financial and Social
+        subtitle: 1. Cognitive capture (Finance)              
+                  2. Right to information (Social)
+        title: Published research papers - Financial and Social.
         url: blogs/magna
       - image: lbss.png
-        subtitle: A university group project (Tidyverse, dplyr, ggplot, and t-test; using bootstrap).
+        subtitle: A university group project with multiple datasets (Tidyverse, dplyr, ggplot, and t-test; using bootstrap).
         title: R for data science 
         url: blogs/rti1
       - image: iim.png
-        subtitle: A python project subsuming topics such as AUC, ROC, logistic regression, and decision tree classifiers. 
-        title: Target Banking in India 
+        subtitle: A python project subsuming topics such as AUC, ROC, logistic regression, and decision tree classifiers to check whether banks
+                  should use target advertising to attract prospective profitable clients.
+        title: Target Banking in India (making the most of the 20% profitable customers; the 80-20 rule).
         url: https://drive.google.com/file/d/1BpuBM3TcjmIyCdv9k0CO1GEFk85mYrg9/view?usp=sharing
       - image: IBM2.png
         subtitle: In an All-India case study competition, we created a simulation for IBM and Maersk; Tradelens and performed a cost-benefit analysis to see whether it should adopt blockchain for operations.
-        title: Cost-benefit analysis of blockchain for the logistic sector  
+        title: Cost-benefit analysis of blockchain for logistic companies.  
         url: https://drive.google.com/file/d/1EERD8I1ggbvxTW4CCI_YMs6oz4iPmD2C/view?usp=sharing
   two:
     buttonText: Blog description 
