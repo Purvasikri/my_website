@@ -53,7 +53,7 @@ params:
   name: Purva Sikri
   navigation:
     button1:
-      - name: Main Menu
+      - name: Main menu
         url: '#'
     links:
       - name: Home
