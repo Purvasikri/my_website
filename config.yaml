@@ -48,7 +48,7 @@ params:
         url: https://github.com/Purvasikri/my_website.git
       - icon: fa-linkedin
         label: LinkedIn
-        url: www.linkedin.com/in/purvasikriconsult
+        url: https://www.linkedin.com/in/purvasikriconsult
   image: ''
   name: Purva Sikri
   navigation:
